@@ -1,12 +1,9 @@
-// The ui-variables file is provided by base themes provided by Atom.
-//
-// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
-// for a full listing of what's available.
 @import "ui-variables";
 @import "syntax-variables";
 @import (less, optional) "../node_modules/react-table/react-table.css";
 
 // -------------- Colors ------------------
+
 @hydrogen-light-background: fadein(
   lighten(@syntax-background-color, 40%),
   100%
@@ -22,12 +19,13 @@
 @hydrogen-inline-color: lighten(@syntax-text-color, 10%);
 @hydrogen-error-color: average(@syntax-text-color, red);
 
-.hydrogen.marker {
+.hydrogen-next.marker {
   display: flex;
   position: relative;
 }
 
-.hydrogen {
+.hydrogen-next {
+
   // -------------- Globals -----------------
 
   code,
@@ -180,6 +178,7 @@
   }
 
   // -------------- Spinner -----------------
+
   .spinner {
     padding: 0 0.5em 0 0.5em;
   }
@@ -415,12 +414,12 @@
   }
 }
 
-.hydrogen code, .hydrogen pre {
+.hydrogen-next code, .hydrogen-next pre {
   font-family: var(--editor-font-family);
   white-space: pre-wrap;
   word-break: normal;
 }
-.hydrogen.inspector span[style^="color"] {
+.hydrogen-next.inspector span[style^="color"] {
   color: @text-color-info !important;
 }
 

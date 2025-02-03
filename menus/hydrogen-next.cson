@@ -6,7 +6,7 @@
       submenu: [
         {
           label: 'Start Local Kernel'
-          command: 'hydrogen-next:start-local-kenel'
+          command: 'hydrogen-next:start-local-kernel'
         }
         {
           label: 'Connect to Remote Kernel'

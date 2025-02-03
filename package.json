@@ -23,21 +23,44 @@
   },
   "main": "./lib/main",
   "activationCommands": {
-    "atom-text-editor": [
-      "hydrogen-next:start-local-kernel",
-      "hydrogen-next:connect-to-remote-kernel",
+    "atom-text-editor:not([mini])": [
       "hydrogen-next:run",
-      "hydrogen-next:run-and-move-down",
       "hydrogen-next:run-all",
       "hydrogen-next:run-all-above",
+      "hydrogen-next:run-and-move-down",
       "hydrogen-next:run-cell",
       "hydrogen-next:run-cell-and-move-down",
-      "hydrogen-next:export-notebook"
+      "hydrogen-next:toggle-watches",
+      "hydrogen-next:toggle-output-area",
+      "hydrogen-next:start-local-kernel",
+      "hydrogen-next:connect-to-remote-kernel",
+      "hydrogen-next:connect-to-existing-kernel",
+      "hydrogen-next:add-watch",
+      "hydrogen-next:remove-watch",
+      "hydrogen-next:update-kernels",
+      "hydrogen-next:toggle-inspector",
+      "hydrogen-next:interrupt-kernel",
+      "hydrogen-next:restart-kernel",
+      "hydrogen-next:shutdown-kernel",
+      "hydrogen-next:export-notebook",
+      "hydrogen-next:fold-current-cell",
+      "hydrogen-next:fold-all-but-current-cell",
+      "hydrogen-next:clear-results",
+      "hydrogen-next:clear-and-restart",
+      "hydrogen-next:clear-and-center",
+      "hydrogen-next:recalculate-all",
+      "hydrogen-next:recalculate-all-above",
+      "hydrogen-next:run-all-inline",
+      "hydrogen-next:recalculate-all-inline",
+      "hydrogen-next:run-all-above-inline",
+      "hydrogen-next:run-all-below-inline",
+      "hydrogen-next:recalculate-all-above-inline"
     ],
     "atom-workspace": [
       "hydrogen-next:import-notebook",
       "hydrogen-next:debug-toggle",
-      "hydrogen-next:toggle-kernel-monitor"
+      "hydrogen-next:toggle-kernel-monitor",
+      "hydrogen-next:hot-reload-package"
     ]
   },
   "dependencies": {

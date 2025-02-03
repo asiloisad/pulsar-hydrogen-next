@@ -36,7 +36,8 @@
     ],
     "atom-workspace": [
       "hydrogen-next:import-notebook",
-      "hydrogen-next:debug-toggle"
+      "hydrogen-next:debug-toggle",
+      "hydrogen-next:toggle-kernel-monitor"
     ]
   },
   "dependencies": {

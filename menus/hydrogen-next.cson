@@ -2,7 +2,7 @@
   {
     label: 'Packages'
     submenu: [
-      label: 'hydrogen-next'
+      label: 'Hydrogen Next'
       submenu: [
         {
           label: 'Start Local Kernel'

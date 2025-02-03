@@ -63,6 +63,31 @@
       "hydrogen-next:hot-reload-package"
     ]
   },
+  "consumedServices": {
+    "autocomplete.watchEditor": {
+      "versions": {
+        "^1.0.0": "consumeAutocompleteWatchEditor"
+      }
+    },
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "4.0.0": "provideAutocompleteResults"
+      }
+    },
+    "hydrogen.provider": {
+      "versions": {
+        "1.1.0": "provideHydrogen",
+        "1.2.0": "provideHydrogen"
+      }
+    }
+  },  
   "dependencies": {
     "@jupyterlab/services": "^7.3.5",
     "@nteract/commutable": "^7.5.1",
@@ -91,31 +116,6 @@
     "uuid": "^7.0.3",
     "ws": "^7.0.0",
     "xmlhttprequest": "^1.8.0"
-  },
-  "consumedServices": {
-    "autocomplete.watchEditor": {
-      "versions": {
-        "^1.0.0": "consumeAutocompleteWatchEditor"
-      }
-    },
-    "status-bar": {
-      "versions": {
-        "^1.0.0": "consumeStatusBar"
-      }
-    }
-  },
-  "providedServices": {
-    "autocomplete.provider": {
-      "versions": {
-        "4.0.0": "provideAutocompleteResults"
-      }
-    },
-    "hydrogen.provider": {
-      "versions": {
-        "1.1.0": "provideHydrogen",
-        "1.2.0": "provideHydrogen"
-      }
-    }
   },
   "overrides": {
     "nan": "2.22.0",

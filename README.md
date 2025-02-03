@@ -36,69 +36,41 @@ Featues of `hydrogen-next`:
 - PulsarNext React-Table CSS fixed.
 - All config `Hydrogen.` renamed to `hydrogen-next.`.
 - All commands `hydrogen:` renamed to `hydrogen-next:`.
+- All styles `hydrogen.` renamed to `hydrogen-next.`.
 - Context menu of text-editor cleared.
 - Integrated `hydrogen-run` package.
 
 ## Alternative keymaps
 
-For Windows/Lines:
-
 ```cson
-'.platform-win32 atom-text-editor:not([mini]), .platform-linux atom-text-editor:not([mini])':
-  'ctrl-enter'  : 'hydrogen-next:run'
-  'shift-enter' : 'hydrogen-next:run-and-move-down'
-  'f5'          : 'hydrogen-next:run-all'
-  'alt-f5'      : 'hydrogen-run:recalculate-all'
-  'shift-f5'    : 'hydrogen-next:run-all-above'
-  'ctrl-f5'     : 'hydrogen-run:recalculate-all-above'
-  'f6'          : 'hydrogen-run:run-all-inline'
-  'alt-f6'      : 'hydrogen-run:recalculate-all-inline'
-  'shift-f6'    : 'hydrogen-run:run-all-above-inline'
-  'ctrl-f6'     : 'hydrogen-run:recalculate-all-above-inline'
-  'f7'          : 'hydrogen-next:run'
-  'ctrl-f7'     : 'hydrogen-next:run-cell'
-  'alt-f7'      : 'hydrogen-run:clear-and-center'
-  'shift-f7'    : 'hydrogen-next:interrupt-kernel'
-  'f8'          : 'hydrogen-next:run-and-move-down'
-  'ctrl-f8'     : 'hydrogen-next:run-cell-and-move-down'
-  'alt-f8'      : 'hydrogen-run:clear-and-restart'
-  'shift-f8'    : 'hydrogen-next:shutdown-kernel'
-  'f9'          : 'hydrogen-next:toggle-inspector'
-```
-
-For MacOS:
-
-```cson
-'.platform-win32 atom-text-editor:not([mini]), .platform-linux atom-text-editor:not([mini])':
-  'cmd-enter'   : 'hydrogen-next:run'
-  'shift-enter' : 'hydrogen-next:run-and-move-down'
-  'f5'          : 'hydrogen-next:run-all'
-  'alt-f5'      : 'hydrogen-run:recalculate-all'
-  'shift-f5'    : 'hydrogen-next:run-all-above'
-  'cmd-f5'      : 'hydrogen-run:recalculate-all-above'
-  'f6'          : 'hydrogen-run:run-all-inline'
-  'alt-f6'      : 'hydrogen-run:recalculate-all-inline'
-  'shift-f6'    : 'hydrogen-run:run-all-above-inline'
-  'cmd-f6'      : 'hydrogen-run:recalculate-all-above-inline'
-  'f7'          : 'hydrogen-next:run'
-  'cmd-f7'      : 'hydrogen-next:run-cell'
-  'alt-f7'      : 'hydrogen-run:clear-and-center'
-  'shift-f7'    : 'hydrogen-next:interrupt-kernel'
-  'f8'          : 'hydrogen-next:run-and-move-down'
-  'cmd-f8'      : 'hydrogen-next:run-cell-and-move-down'
-  'alt-f8'      : 'hydrogen-run:clear-and-restart'
-  'shift-f8'    : 'hydrogen-next:shutdown-kernel'
-  'f9'          : 'hydrogen-next:toggle-inspector'
+atom-text-editor:not([mini])':
+  'ctrl-enter' : 'hydrogen-next:run'
+  'shift-enter': 'hydrogen-next:run-and-move-down'
+  'f5'         : 'hydrogen-next:run-all'
+  'alt-f5'     : 'hydrogen-run:recalculate-all'
+  'shift-f5'   : 'hydrogen-next:run-all-above'
+  'ctrl-f5'    : 'hydrogen-run:recalculate-all-above'
+  'f6'         : 'hydrogen-run:run-all-inline'
+  'alt-f6'     : 'hydrogen-run:recalculate-all-inline'
+  'shift-f6'   : 'hydrogen-run:run-all-above-inline'
+  'ctrl-f6'    : 'hydrogen-run:recalculate-all-above-inline'
+  'f7'         : 'hydrogen-next:run'
+  'ctrl-f7'    : 'hydrogen-next:run-cell'
+  'alt-f7'     : 'hydrogen-run:clear-and-center'
+  'shift-f7'   : 'hydrogen-next:interrupt-kernel'
+  'f8'         : 'hydrogen-next:run-and-move-down'
+  'ctrl-f8'    : 'hydrogen-next:run-cell-and-move-down'
+  'alt-f8'     : 'hydrogen-run:clear-and-restart'
+  'shift-f8'   : 'hydrogen-next:shutdown-kernel'
+  'f9'         : 'hydrogen-next:toggle-inspector'
 ```
 
 # TODO
 
-- [ ] Add variable explorer (like [hydrogen-python](https://github.com/nikitakit/hydrogen-python)).
+- [ ] Add Variable Explorer (like [hydrogen-python](https://github.com/nikitakit/hydrogen-python)).
 - [ ] Extend python executable code (like [hydrogen-python](https://github.com/nikitakit/hydrogen-python))
-- [ ] Inspect `editor not responsible` problem while editor is loading.
-- [ ] Rename commands from `hydrogen-next:...` to `hydrogen-next:...`.
-- [ ] Add setting to swap commands set.
-- [ ] Change package defaults.
+- [ ] Fix `Editor is not responsible` while package is loading.
+- [ ] Add setting to swap keymaps set.
 
 # Contributing
 

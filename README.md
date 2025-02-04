@@ -40,6 +40,7 @@ Featues of `hydrogen-next`:
 - Context menu of text-editor cleared.
 - Integrated `hydrogen-run` package.
 - Python `if|elif|else` and `try|except|else|finally` extended.
+- Multiple code blocks (or cursors) can be executed in a row.
 
 ## Alternative keymaps
 
@@ -68,9 +69,10 @@ Featues of `hydrogen-next`:
 
 # TODO
 
-- [ ] Add Variable Explorer (like [hydrogen-python](https://github.com/nikitakit/hydrogen-python)).
-- [ ] Fix `Editor is not responsible` while package is loading.
-- [ ] Add setting to swap keymaps set.
+- Add Variable Explorer (like [hydrogen-python](https://github.com/nikitakit/hydrogen-python)).
+- Fix `Editor is not responsible` while package is loading.
+- Add setting to swap keymaps set.
+- Resolve multiple cursors while `Run` .
 
 # Contributing
 

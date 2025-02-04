@@ -43,7 +43,7 @@ Featues of `hydrogen-next`:
 ## Alternative keymaps
 
 ```cson
-atom-text-editor:not([mini])':
+'atom-text-editor:not([mini])':
   'ctrl-enter' : 'hydrogen-next:run'
   'shift-enter': 'hydrogen-next:run-and-move-down'
   'f5'         : 'hydrogen-next:run-all'

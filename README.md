@@ -39,6 +39,7 @@ Featues of `hydrogen-next`:
 - All styles `hydrogen.` renamed to `hydrogen-next.`.
 - Context menu of text-editor cleared.
 - Integrated `hydrogen-run` package.
+- Python `if|elif|else` and `try|except|else|finally` extended.
 
 ## Alternative keymaps
 
@@ -68,7 +69,6 @@ Featues of `hydrogen-next`:
 # TODO
 
 - [ ] Add Variable Explorer (like [hydrogen-python](https://github.com/nikitakit/hydrogen-python)).
-- [ ] Extend python executable code (like [hydrogen-python](https://github.com/nikitakit/hydrogen-python))
 - [ ] Fix `Editor is not responsible` while package is loading.
 - [ ] Add setting to swap keymaps set.
 

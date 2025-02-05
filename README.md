@@ -27,52 +27,51 @@ Featues of `hydrogen` & `hydrogen-next`:
 - Interrupt or restart the kernel if anything goes wrong.
 - Use a custom kernel connection (for example to run code inside Docker), read more in the "Custom kernel connection (inside Docker)" section.
 
-Featues of `hydrogen-next`:
+Features of `hydrogen-next`:
 
-- Package works well in Pulsar and PulsarNext without rebuild.
+- Package works well in Pulsar and PulsarNext without rebuilding.
 - Dependencies `jmp` & `zeromq` updated to latest version.
 - Socket monitors fixed.
-- Libs `.ts`. and `.tsx` converted to java script.
-- PulsarNext React-Table CSS fixed.
-- All config `Hydrogen.` renamed to `hydrogen-next.`.
+- Converted `.ts` and `.tsx` libs to java script.
+- All configuration `hydrogen.` renamed to `hydrogen-next.`.
 - All commands `hydrogen:` renamed to `hydrogen-next:`.
 - All styles `hydrogen.` renamed to `hydrogen-next.`.
-- Context menu of text-editor cleared.
+- Text editor context menu removed.
 - Integrated `hydrogen-run` package.
-- Python `if|elif|else` and `try|except|else|finally` extended.
-- Multiple cursors evaluation supported.
+- Evaluation of Python `if|elif|else` and `try|except|else|finally` fixed.
+- Command `Run` supports multiple cursors.
 
 ## Alternative keymaps
 
 ```cson
-'atom-text-editor:not([mini])':
-  'ctrl-enter' : 'hydrogen-next:run'
-  'shift-enter': 'hydrogen-next:run-and-move-down'
-  'f5'         : 'hydrogen-next:run-all'
-  'alt-f5'     : 'hydrogen-run:recalculate-all'
-  'shift-f5'   : 'hydrogen-next:run-all-above'
-  'ctrl-f5'    : 'hydrogen-run:recalculate-all-above'
-  'f6'         : 'hydrogen-run:run-all-inline'
-  'alt-f6'     : 'hydrogen-run:recalculate-all-inline'
-  'shift-f6'   : 'hydrogen-run:run-all-above-inline'
-  'ctrl-f6'    : 'hydrogen-run:recalculate-all-above-inline'
-  'f7'         : 'hydrogen-next:run'
-  'ctrl-f7'    : 'hydrogen-next:run-cell'
-  'alt-f7'     : 'hydrogen-run:clear-and-center'
-  'shift-f7'   : 'hydrogen-next:interrupt-kernel'
-  'f8'         : 'hydrogen-next:run-and-move-down'
-  'ctrl-f8'    : 'hydrogen-next:run-cell-and-move-down'
-  'alt-f8'     : 'hydrogen-run:clear-and-restart'
-  'shift-f8'   : 'hydrogen-next:shutdown-kernel'
-  'f9'         : 'hydrogen-next:toggle-inspector'
+"atom-text-editor:not([mini])":
+  "ctrl-enter" : "hydrogen-next:run"
+  "shift-enter": "hydrogen-next:run-and-move-down"
+  "f5"         : "hydrogen-next:run-all"
+  "alt-f5"     : "hydrogen-run:recalculate-all"
+  "shift-f5"   : "hydrogen-next:run-all-above"
+  "ctrl-f5"    : "hydrogen-run:recalculate-all-above"
+  "f6"         : "hydrogen-run:run-all-inline"
+  "alt-f6"     : "hydrogen-run:recalculate-all-inline"
+  "shift-f6"   : "hydrogen-run:run-all-above-inline"
+  "ctrl-f6"    : "hydrogen-run:recalculate-all-above-inline"
+  "f7"         : "hydrogen-next:run"
+  "ctrl-f7"    : "hydrogen-next:run-cell"
+  "alt-f7"     : "hydrogen-run:clear-and-center"
+  "shift-f7"   : "hydrogen-next:interrupt-kernel"
+  "f8"         : "hydrogen-next:run-and-move-down"
+  "ctrl-f8"    : "hydrogen-next:run-cell-and-move-down"
+  "alt-f8"     : "hydrogen-run:clear-and-restart"
+  "shift-f8"   : "hydrogen-next:shutdown-kernel"
+  "f9"         : "hydrogen-next:toggle-inspector"
 ```
 
 # TODO
 
 - Add Variable Explorer (like [hydrogen-python](https://github.com/nikitakit/hydrogen-python)).
-- Fix `Editor is not responsible` while package is loading.
+- Fix `Editor is not responsible` when loading package.
 - Add setting to swap keymaps set.
-- Extend Python class to decatorators.
+- Extend Python code to decatorators.
 
 # Contributing
 

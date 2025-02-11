@@ -40,6 +40,7 @@ Features of `hydrogen-next`:
 - Integrated `hydrogen-run` package.
 - Evaluation of Python `if|elif|else` and `try|except|else|finally` fixed.
 - Command `Run` supports multiple cursors.
+- New command `:open-examples` added.
 
 ## Alternative keymaps
 

@@ -103,7 +103,7 @@
     "atom-select-list": "^0.8.1",
     "escape-carriage": "^1.3.1",
     "@esm2cjs/escape-string-regexp": "^5.0.0",
-    "jmp": "https://github.com/bacadra/jmp/tarball/bump-zeromq6",
+    "jmp": "github:bacadra/jmp#bump-zeromq6",
     "kernelspecs": "^2.0.1",
     "lodash": "^4.17.21",
     "mathjax-electron": "^3.0.0",

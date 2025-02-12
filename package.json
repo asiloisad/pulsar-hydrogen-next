@@ -61,7 +61,8 @@
       "hydrogen-next:debug-toggle",
       "hydrogen-next:toggle-kernel-monitor",
       "hydrogen-next:hot-reload-package",
-      "hydrogen-next:open-examples"
+      "hydrogen-next:open-examples",
+      "hydrogen-next:shutdown-all-kernels"
     ]
   },
   "consumedServices": {

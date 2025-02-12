@@ -45,27 +45,28 @@ Features of `hydrogen-next`:
 
 ## Alternative keymaps
 
+You can disable the predefined keymap and use your own in `keymap.cson`. An example:
+
 ```cson
 "atom-text-editor:not([mini])":
   "ctrl-enter" : "hydrogen-next:run"
   "shift-enter": "hydrogen-next:run-and-move-down"
   "f5"         : "hydrogen-next:run-all"
-  "alt-f5"     : "hydrogen-run:recalculate-all"
+  "alt-f5"     : "hydrogen-next:recalculate-all"
   "shift-f5"   : "hydrogen-next:run-all-above"
-  "ctrl-f5"    : "hydrogen-run:recalculate-all-above"
-  "f6"         : "hydrogen-run:run-all-inline"
-  "alt-f6"     : "hydrogen-run:recalculate-all-inline"
-  "shift-f6"   : "hydrogen-run:run-all-above-inline"
-  "ctrl-f6"    : "hydrogen-run:recalculate-all-above-inline"
+  "ctrl-f5"    : "hydrogen-next:recalculate-all-above"
+  "f6"         : "hydrogen-next:run-all-inline"
+  "alt-f6"     : "hydrogen-next:recalculate-all-inline"
+  "shift-f6"   : "hydrogen-next:run-all-above-inline"
+  "ctrl-f6"    : "hydrogen-next:recalculate-all-above-inline"
   "f7"         : "hydrogen-next:run"
   "ctrl-f7"    : "hydrogen-next:run-cell"
-  "alt-f7"     : "hydrogen-run:clear-and-center"
+  "alt-f7"     : "hydrogen-next:clear-and-center"
   "shift-f7"   : "hydrogen-next:interrupt-kernel"
   "f8"         : "hydrogen-next:run-and-move-down"
   "ctrl-f8"    : "hydrogen-next:run-cell-and-move-down"
-  "alt-f8"     : "hydrogen-run:clear-and-restart"
+  "alt-f8"     : "hydrogen-next:clear-and-restart"
   "shift-f8"   : "hydrogen-next:shutdown-kernel"
-  "f9"         : "hydrogen-next:toggle-inspector"
 ```
 
 # TODO

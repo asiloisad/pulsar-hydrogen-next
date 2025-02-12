@@ -29,6 +29,10 @@
           command: 'hydrogen-next:shutdown-kernel'
         }
         {
+          label: 'Shutdown All Kernels'
+          command: 'hydrogen-next:shutdown-all-kernels'
+        }
+        {
           label: 'Toggle Kernel Monitor'
           command: 'hydrogen-next:toggle-kernel-monitor'
         }
@@ -104,8 +108,12 @@
         }
         {type: 'separator'}
         {
-          label: 'Toggle Inspector'
-          command: 'hydrogen-next:toggle-inspector'
+          label: 'Show Inspector'
+          command: 'hydrogen-next:show-inspector'
+        }
+        {
+          label: 'Hide Inspector'
+          command: 'hydrogen-next:hide-inspector'
         }
         {
           label: 'Toggle Output Area'
@@ -123,6 +131,10 @@
         {
           label: 'Export Notebook'
           command: 'hydrogen-next:export-notebook'
+        }
+        {
+          label: 'Open Examples'
+          command: 'hydrogen-next:open-examples'
         }
       ]
     ]

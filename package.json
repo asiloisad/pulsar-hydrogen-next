@@ -38,7 +38,6 @@
       "hydrogen-next:add-watch",
       "hydrogen-next:remove-watch",
       "hydrogen-next:update-kernels",
-      "hydrogen-next:toggle-inspector",
       "hydrogen-next:interrupt-kernel",
       "hydrogen-next:restart-kernel",
       "hydrogen-next:shutdown-kernel",
@@ -62,7 +61,9 @@
       "hydrogen-next:toggle-kernel-monitor",
       "hydrogen-next:hot-reload-package",
       "hydrogen-next:open-examples",
-      "hydrogen-next:shutdown-all-kernels"
+      "hydrogen-next:shutdown-all-kernels",
+      "hydrogen-next:show-inspector",
+      "hydrogen-next:hide-inspector"
     ]
   },
   "consumedServices": {

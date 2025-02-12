@@ -41,6 +41,7 @@ Features of `hydrogen-next`:
 - Evaluation of Python `if|elif|else` and `try|except|else|finally` fixed.
 - Command `Run` supports multiple cursors.
 - New command `:open-examples` added.
+- Inspector workflow changed.
 
 ## Alternative keymaps
 

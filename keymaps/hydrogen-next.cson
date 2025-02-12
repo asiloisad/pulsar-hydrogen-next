@@ -1,7 +1,6 @@
 'atom-text-editor:not([mini])':
     'shift-enter': 'hydrogen-next:run-and-move-down'
     'shift-alt-enter': 'hydrogen-next:run-cell-and-move-down'
-    'alt-i': 'hydrogen-next:toggle-inspector'
 
 '.platform-darwin atom-text-editor:not([mini])':
     'shift-enter': 'hydrogen-next:run-and-move-down'
@@ -15,6 +14,10 @@
     'ctrl-alt-enter': 'hydrogen-next:run-cell'
     'ctrl-enter': 'hydrogen-next:run'
     'ctrl-shift-alt-enter': 'hydrogen-next:run-all'
+
+'atom-workspace':
+    'alt-i': 'hydrogen-next:show-inspector'
+    'alt-shift-i': 'hydrogen-next:hide-inspector'
 
 '.platform-darwin atom-workspace':
     'cmd-alt-backspace': 'hydrogen-next:clear-results'

@@ -3,6 +3,7 @@
 # You might need to reload Atom after installation of dependencies if they are not found
 
 import altair as alt
+# alt.renderers.enable("html") # or 'mimetype' | optional
 from vega_datasets import data
 iris = data.iris()
 spec = alt.Chart(iris).mark_point().encode(

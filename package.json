@@ -53,7 +53,14 @@
       "hydrogen-next:recalculate-all-inline",
       "hydrogen-next:run-all-above-inline",
       "hydrogen-next:run-all-below-inline",
-      "hydrogen-next:recalculate-all-above-inline"
+      "hydrogen-next:recalculate-all-above-inline",
+      "hydrogen-next:next-cell",
+      "hydrogen-next:previous-cell",
+      "hydrogen-next:select-cell",
+      "hydrogen-next:select-up",
+      "hydrogen-next:select-down",
+      "hydrogen-next:move-cell-up",
+      "hydrogen-next:move-cell-down"
     ],
     "atom-workspace": [
       "hydrogen-next:import-notebook",

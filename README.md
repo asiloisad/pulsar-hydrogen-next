@@ -38,6 +38,7 @@ Features of `hydrogen-next`:
 - All styles `hydrogen.` renamed to `hydrogen-next.`.
 - Text editor context menu removed.
 - Integrated `hydrogen-run` package.
+- Integrated `cell-navigation` package.
 - Evaluation of Python `if|elif|else` and `try|except|else|finally` fixed.
 - Command `Run` supports multiple cursors.
 - New command `:open-examples` added.

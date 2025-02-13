@@ -98,7 +98,6 @@
     "@nteract/mathjax": "^4.0.16",
     "@nteract/outputs": "^5.1.14",
     "@nteract/plotly": "^1.49.1",
-    "@nteract/transform-vega": "^1.0.0",
     "anser": "^2.3.0",
     "atom-select-list": "^0.8.1",
     "escape-carriage": "^1.3.1",

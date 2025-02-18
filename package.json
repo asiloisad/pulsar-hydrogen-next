@@ -1,7 +1,7 @@
 {
   "name": "hydrogen-next",
   "description": "Run code interactively, inspect data, and plot.",
-  "repository": "https://github.com/bacadra/pulsar-hydrogen-next",
+  "repository": "https://github.com/asiloisad/pulsar-hydrogen-next",
   "keywords": [
     "execute",
     "run",
@@ -111,7 +111,7 @@
     "anser": "^2.3.0",
     "atom-select-list": "^0.8.1",
     "escape-carriage": "^1.3.1",
-    "jmp": "github:bacadra/jmp#bump-zeromq6",
+    "jmp": "github:asiloisad/jmp#bump-zeromq6",
     "kernelspecs": "^2.0.1",
     "lodash": "^4.17.21",
     "mathjax-electron": "^3.0.0",

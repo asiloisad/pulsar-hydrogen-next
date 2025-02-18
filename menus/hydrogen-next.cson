@@ -145,13 +145,8 @@
   '.tree-view .file .name[data-name$=\\.ipynb]': [
     {type: 'separator'}
     {
-      label: 'hydrogen-next'
-      submenu: [
-        {
-          label: 'Import Notebook'
-          command: 'hydrogen-next:import-notebook'
-        }
-      ]
+      label: 'Import Notebook'
+      command: 'hydrogen-next:import-notebook'
     }
     {type: 'separator'}
   ]

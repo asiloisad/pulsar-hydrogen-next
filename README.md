@@ -43,6 +43,7 @@ Features of `hydrogen-next`:
 - Command `Run` supports multiple cursors.
 - New command `:open-examples` added.
 - Inspector workflow changed.
+- Fixed notebook import command.
 
 ## Alternative keymaps
 

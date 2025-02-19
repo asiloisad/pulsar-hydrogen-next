@@ -6,7 +6,7 @@ A package provide an interactive coding environment that supports Python, R, Jav
 
 ## Installation
 
-To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.dev/packages/hydrogen-next) in the Install pane of the Pulsar settings or run `ppm install hydrogen-next`. Alternatively, you can run `ppm install asiloisad/pulsar-hydrogen-next` to install a package directly from the Github repository.
+To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.dev/packages/hydrogen-next) in the Install pane of the Pulsar settings or run `ppm install hydrogen-next`. Alternatively, you can run `ppm install asiloisad/pulsar-hydrogen-next` to install a package directly from the GitHub repository.
 
 ## Useful links
 
@@ -16,7 +16,7 @@ To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.de
 
 ## Features
 
-Featues of `hydrogen` & `hydrogen-next`:
+Features of `hydrogen` & `hydrogen-next`:
 
 - Execute a line, selection, or block at a time.
 - Rich media support for plots, images, and video.
@@ -77,7 +77,7 @@ You can disable the predefined keymap and use your own in `keymap.cson`. An exam
 - Add Variable Explorer (like [hydrogen-python](https://github.com/nikitakit/hydrogen-python)).
 - Fix `Editor is not responsible` when loading package.
 - Add setting to swap keymaps set.
-- Extend Python code to decatorators.
+- Extend Python code to decorators.
 - Fix line number of evaluation.
 
 # Contributing

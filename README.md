@@ -26,6 +26,7 @@ Featues of `hydrogen` & `hydrogen-next`:
 - One kernel per language (so you can run snippets from several files, all in the same namespace).
 - Interrupt or restart the kernel if anything goes wrong.
 - Use a custom kernel connection (for example to run code inside Docker), read more in the "Custom kernel connection (inside Docker)" section.
+- Cell marker are compatible with [navigation-panel](https://github.com/asiloisad/pulsar-navigation-panel).
 
 Features of `hydrogen-next`:
 

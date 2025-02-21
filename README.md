@@ -41,7 +41,8 @@ Features of `hydrogen-next`:
 - Integrated `hydrogen-run` package.
 - Integrated `cell-navigation` package.
 - Evaluation of Python `if|elif|else` and `try|except|else|finally` fixed.
-- Command `Run` supports multiple cursors.
+- Command `Run` supports multiple cursors & selections.
+- Command `Run` is not trimmed to cell range.
 - New command `:open-examples` added.
 - Inspector workflow changed.
 - Fixed notebook import command.

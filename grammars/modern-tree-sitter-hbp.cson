@@ -1,0 +1,8 @@
+scopeName: 'hydrogen.breakpoints'
+name: 'hydrogen breakpoints'
+type: 'modern-tree-sitter'
+parser: 'tree-sitter-hbp'
+
+injectionSelector: 'comment.line'
+treeSitter:
+  grammar: 'ts/tree-sitter-hbp.wasm'

@@ -46,6 +46,8 @@ Features of `hydrogen-next`:
 - New command `:open-examples` added.
 - Inspector workflow changed.
 - Fixed notebook import command.
+- Breakpoints grammar removed.
+- Cell markers & decorations added.
 
 ## Alternative keymaps
 

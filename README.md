@@ -38,16 +38,16 @@ Features of `hydrogen-next`:
 - All commands `hydrogen:` renamed to `hydrogen-next:`.
 - All styles `hydrogen.` renamed to `hydrogen-next.`.
 - Text editor context menu removed.
-- Integrated `hydrogen-run` package.
-- Integrated `cell-navigation` package.
+- Integrated `hydrogen-run` package for every grammar.
+- Integrated `cell-navigation` package for every grammar.
+- Breakpoints grammar removed, because only text-mate version was available.
+- Integrated `hydrogen-cell-separator` package, but as markers for every grammar.
 - Evaluation of Python `if|elif|else` and `try|except|else|finally` fixed.
 - Command `Run` supports multiple cursors & selections.
 - Command `Run` is not trimmed to cell range.
 - New command `:open-examples` added.
 - Inspector workflow changed.
 - Fixed notebook import command.
-- Breakpoints grammar removed.
-- Cell markers & decorations added.
 
 ## Alternative keymaps
 

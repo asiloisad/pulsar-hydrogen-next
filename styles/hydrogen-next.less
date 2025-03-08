@@ -423,8 +423,14 @@
   color: @text-color-info !important;
 }
 
-.line.hydrogen-next-breakpoint {
-  border-top: 1px solid @syntax-wrap-guide-color;
+.line.hydrogen-next-breakpoint::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  background: @syntax-wrap-guide-color;
+  opacity: 0.95;
 }
 
 // -------------- Overwrite Autocomplete-Plus style -----------------

@@ -1,23 +1,9 @@
 '.platform-win32 atom-text-editor:not([mini]), .platform-linux atom-text-editor:not([mini])':
-  'cmd-enter': 'hydrogen-next:run'
-  'shift-enter': 'hydrogen-next:run-and-move-down'
-  'cmd-alt-enter': 'hydrogen-next:run-cell'
-  'shift-alt-enter': 'hydrogen-next:run-cell-and-move-down'
-  'cmd-ctrl-enter': 'hydrogen-next:run-all'
-  "alt-j": "hydrogen-next:previous-cell",
-  "alt-k": "hydrogen-next:next-cell",
-  "alt-l": "hydrogen-next:select-cell",
-  "shift-alt-j": "hydrogen-next:select-up",
-  "shift-alt-k": "hydrogen-next:select-down",
-  "cmd-alt-j": "hydrogen-next:move-cell-up"
-  "cmd-alt-k": "hydrogen-next:move-cell-down",
-
-'.platform-darwin atom-text-editor:not([mini])':
   'ctrl-enter': 'hydrogen-next:run'
   'shift-enter': 'hydrogen-next:run-and-move-down'
   'ctrl-alt-enter': 'hydrogen-next:run-cell'
   'shift-alt-enter': 'hydrogen-next:run-cell-and-move-down'
-  'ctrl-shift-alt-enter': 'hydrogen-next:run-all'
+  'ctrl-ctrl-enter': 'hydrogen-next:run-all'
   "alt-j": "hydrogen-next:previous-cell",
   "alt-k": "hydrogen-next:next-cell",
   "alt-l": "hydrogen-next:select-cell",
@@ -25,6 +11,20 @@
   "shift-alt-k": "hydrogen-next:select-down",
   "ctrl-alt-j": "hydrogen-next:move-cell-up"
   "ctrl-alt-k": "hydrogen-next:move-cell-down",
+
+'.platform-darwin atom-text-editor:not([mini])':
+  'cmd-enter': 'hydrogen-next:run'
+  'shift-enter': 'hydrogen-next:run-and-move-down'
+  'cmd-alt-enter': 'hydrogen-next:run-cell'
+  'shift-alt-enter': 'hydrogen-next:run-cell-and-move-down'
+  'cmd-shift-alt-enter': 'hydrogen-next:run-all'
+  "alt-j": "hydrogen-next:previous-cell",
+  "alt-k": "hydrogen-next:next-cell",
+  "alt-l": "hydrogen-next:select-cell",
+  "shift-alt-j": "hydrogen-next:select-up",
+  "shift-alt-k": "hydrogen-next:select-down",
+  "cmd-alt-j": "hydrogen-next:move-cell-up"
+  "cmd-alt-k": "hydrogen-next:move-cell-down",
 
 '.platform-win32 atom-workspace, .platform-linux atom-workspace':
   'ctrl-shift-backspace': 'hydrogen-next:clear-results'

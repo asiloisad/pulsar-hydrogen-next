@@ -16,38 +16,36 @@ To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.de
 
 ## Features
 
-Features of `hydrogen` & `hydrogen-next`:
+`Hydrogen` & `hydrogen-next` core features:
 
-- Execute a line, selection, or block at a time.
-- Rich media support for plots, images, and video.
-- Watch expressions let you keep track of variables and re-run snippets after every change.
-- Completions from the running kernel, just like autocomplete in the Chrome dev tools.
-- Code can be inspected to show useful information provided by the running kernel.
-- One kernel per language (so you can run snippets from several files, all in the same namespace).
-- Interrupt or restart the kernel if anything goes wrong.
-- Use a custom kernel connection (for example to run code inside Docker), read more in the "Custom kernel connection (inside Docker)" section.
-- Cell marker are compatible with [navigation-panel](https://github.com/asiloisad/pulsar-navigation-panel).
+- Execute a line, selection, or block of code.
+- Rich media output: plots, images, video, HTML, LaTeX, and more.
+- Watch expressions to automatically re-run and track variables.
+- Kernel-powered completions (similar to Chrome DevTools autocomplete).
+- Inline inspection of code objects from the running kernel.
+- One kernel per language (share the same namespace across files).
+- Interrupt or restart kernels when needed (Windows exclueded).
+- Support for custom kernel connections (e.g. inside Docker).
+- Cell markers compatible with [navigation-panel](https://github.com/asiloisad/pulsar-navigation-panel).
 
-Features of `hydrogen-next`:
+Enhancements exclusive to `hydrogen-next`:
 
-- Package works well in Pulsar and PulsarNext without rebuilding.
-- Dependencies `jmp` & `zeromq` updated to latest version.
-- Socket monitors fixed.
-- Converted `.ts` and `.tsx` libs to java script.
-- All configuration `hydrogen.` renamed to `hydrogen-next.`.
-- All commands `hydrogen:` renamed to `hydrogen-next:`.
-- All styles `hydrogen.` renamed to `hydrogen-next.`.
-- Text editor context menu removed.
-- Integrated `hydrogen-run` package for every grammar.
-- Integrated `cell-navigation` package for every grammar.
-- Breakpoints grammar removed, because only text-mate version was available.
-- Integrated `hydrogen-cell-separator` package, but as markers for every grammar.
-- Evaluation of Python `if|elif|else` and `try|except|else|finally` fixed.
-- Command `Run` supports multiple cursors & selections.
-- Command `Run` is not trimmed to cell range.
-- New command `:open-examples` added.
-- Inspector workflow changed.
+- Full compatibility with Pulsar and PulsarNext without rebuilding.
+- Updated dependencies: `jmp` and `zeromq` now use latest versions.
+- Repaired socket monitoring for improved kernel stability.
+- TypeScript code converted to JavaScript.
+- Removed outdated text-editor context menu.
+- Integrated `hydrogen-run`.
+- Integrated `cell-navigation`.
+- Removed breakpoints grammar, because tree-sitter is missing.
+- Integrated `hydrogen-cell-separator` as markers.
+- Correct evaluation of Python `if/elif/else` and `try/except/else/finally`.
+- Run command supports multiple cursors and multi-selections.
+- Run is no longer trimmed to the cell range.
+- Added new command: `hydrogen-next:open-examples`.
+- Updated inspector workflow.
 - Fixed notebook import command.
+- The transport package is now loaded asynchronously.
 
 ## Alternative keymaps
 
@@ -74,14 +72,6 @@ You can disable the predefined keymap and use your own in `keymap.cson`. An exam
   "alt-f8"     : "hydrogen-next:clear-and-restart"
   "shift-f8"   : "hydrogen-next:shutdown-kernel"
 ```
-
-# TODO
-
-- Add Variable Explorer (like [hydrogen-python](https://github.com/nikitakit/hydrogen-python)).
-- Fix `Editor is not responsible` when loading package.
-- Add setting to swap keymaps set.
-- Extend Python code to decorators.
-- Fix line number of evaluation.
 
 # Contributing
 

@@ -45,7 +45,6 @@ Enhancements exclusive to `hydrogen-next`:
 - Added new command: `hydrogen-next:open-examples`.
 - Updated inspector workflow.
 - Fixed notebook import command.
-- The transport package is now loaded asynchronously.
 
 ## Alternative keymaps
 

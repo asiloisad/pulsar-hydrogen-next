@@ -123,6 +123,10 @@
           label: 'Toggle Watches'
           command: 'hydrogen-next:toggle-watches'
         }
+        {
+          label: 'Toggle Variable Explorer'
+          command: 'hydrogen-next:toggle-variable-explorer'
+        }
         {type: 'separator'}
         {
           label: 'Import Notebook'

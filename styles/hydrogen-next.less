@@ -345,18 +345,19 @@
     .kernel-monitor-table {
       width: 100%;
 
-      thead {
+      >thead {
         position: sticky;
         top: 0;
         z-index: 3;
         background-color: @background-color-highlight;
       }
 
-      th,
-      td {
+      border: unset;
+
+      th, td {
         padding: 0.3em 0.5em;
         border: 1px solid @base-border-color;
-        border-top: 0px;
+        border-top: 1px;
 
         p {
           margin-bottom: unset;
@@ -476,6 +477,10 @@
     .variable-explorer-controls {
       flex: 0 0 auto;
 
+      .filter-container atom-text-editor {
+        font-size: @font-size;
+      }
+
       .btn-group {
         display: flex;
         width: 100%;
@@ -503,18 +508,19 @@
       .variable-table {
         width: 100%;
 
-        thead {
+        >thead {
           position: sticky;
           top: 0;
-          z-index: 3;
+          z-index: 3t;
           background-color: @background-color-highlight;
         }
 
-        th,
-        td {
+        border: unset;
+
+        th, td {
           padding: 0.3em 0.5em;
           border: 1px solid @base-border-color;
-          border-top: 0px;
+          border-top: 1px;
 
           p {
             margin-bottom: unset;
@@ -523,16 +529,7 @@
 
         th:nth-child(1),
         th:nth-child(2) {
-          width: 15%;
           white-space: nowrap;
-        }
-
-        th:nth-child(3) {
-          width: 70%;
-        }
-
-        .variable-name {
-          font-weight: bold;
         }
 
         .variable-type {

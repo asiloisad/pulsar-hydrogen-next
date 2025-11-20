@@ -340,7 +340,6 @@
   .kernel-monitor-wrapper {
     overflow-y: auto;
     overflow-x: hidden;
-    font-size: var(--editor-font-size);
     cursor: default;
 
     .kernel-monitor-table {
@@ -351,10 +350,6 @@
         top: 0;
         z-index: 3;
         background-color: @background-color-highlight;
-      }
-
-      tbody {
-        background-color: @base-background-color;
       }
 
       th,
@@ -484,11 +479,17 @@
       .btn-group {
         display: flex;
         width: 100%;
+        margin-top: 5px;
+        margin-bottom: 8px;
 
         .btn {
           width: 100%;
+        }
+
+        .input-label {
+          display: flex;
+          align-items: center;
           justify-content: center;
-          margin-top: 5px;
         }
       }
     }
@@ -496,7 +497,6 @@
     .variable-wrapper {
       overflow-y: auto;
       overflow-x: hidden;
-      font-size: var(--editor-font-size);
       cursor: default;
       height: calc(100% - 80px); // Adjust for controls height
 
@@ -508,10 +508,6 @@
           top: 0;
           z-index: 3;
           background-color: @background-color-highlight;
-        }
-
-        tbody {
-          background-color: @base-background-color;
         }
 
         th,

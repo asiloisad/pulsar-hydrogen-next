@@ -4,18 +4,14 @@
 
 // -------------- Colors ------------------
 
-@hydrogen-light-background: fadein(
-  lighten(@syntax-background-color, 40%),
-  100%
-);
+@hydrogen-light-background: fadein(lighten(@syntax-background-color, 40%),
+    100%);
 @hydrogen-dark-background: fadein(lighten(@syntax-background-color, 10%), 100%);
 
-@hydrogen-inline-background: contrast(
-  @syntax-text-color,
-  @hydrogen-dark-background,
-  @hydrogen-light-background,
-  20%
-);
+@hydrogen-inline-background: contrast(@syntax-text-color,
+    @hydrogen-dark-background,
+    @hydrogen-light-background,
+    20%);
 @hydrogen-inline-color: lighten(@syntax-text-color, 10%);
 @hydrogen-error-color: average(@syntax-text-color, red);
 
@@ -72,6 +68,7 @@
 
   .markdown {
     font-family: @font-family;
+
     code {
       color: @hydrogen-inline-color;
       background-color: @hydrogen-inline-background;
@@ -89,6 +86,7 @@
       border: none;
       color: @hydrogen-error-color;
     }
+
     svg {
       background-color: unset;
       margin: 0 !important;
@@ -132,7 +130,9 @@
   .multiline-container {
     display: flex;
     border: solid 1px @base-border-color;
+
     &[hydrogen-wrapoutput="true"] {
+
       code,
       pre {
         white-space: pre-wrap;
@@ -143,12 +143,14 @@
 
   .multiline-container .hydrogen_cell_display {
     padding: @component-padding;
+
     // Style fix for plotly toolbar
     .cell_display {
       overflow-y: hidden;
       display: initial;
       height: 100%;
     }
+
     .modebar-group {
       display: flex;
     }
@@ -160,7 +162,7 @@
     flex-direction: column;
   }
 
-  .multiline-container .toolbar > :not(:first-child) {
+  .multiline-container .toolbar> :not(:first-child) {
     border-top: solid 1px @base-border-color;
   }
 
@@ -183,7 +185,7 @@
     padding: 0 0.5em 0 0.5em;
   }
 
-  .spinner > div {
+  .spinner>div {
     background-color: @hydrogen-inline-color;
     height: 100%;
     width: 2px;
@@ -213,11 +215,13 @@
   }
 
   @keyframes stretchdelay {
+
     0%,
     40%,
     100% {
       transform: scaleY(0.32);
     }
+
     20% {
       transform: scaleY(0.8);
     }
@@ -264,13 +268,16 @@
     .slider {
       .btn-xs.icon {
         position: absolute;
+
         &.icon-chevron-left {
           left: @component-padding;
         }
+
         &.icon-chevron-right {
           right: @component-padding;
         }
       }
+
       .current-output {
         text-align: center;
       }
@@ -289,6 +296,7 @@
             background-color: @button-background-color-selected;
             border: 1px solid @background-color-selected;
           }
+
           &::-webkit-slider-runnable-track {
             -webkit-appearance: none;
             background: @background-color-selected;
@@ -308,10 +316,12 @@
 
     .multiline-container {
       font-family: monospace;
+
       &:not(.scroll-list) {
         flex: 1;
       }
     }
+
     .scroll-list {
       flex-direction: column;
 
@@ -365,6 +375,7 @@
     .btn-group {
       margin-top: 10px;
       display: block;
+
       .btn {
         width: 50%;
       }
@@ -412,13 +423,42 @@
     //   color: @text-color-info !important;
     // }
   }
+
+  // -------------- Variable Explorer -----------------
+
+  .variable-explorer {
+    .variable-explorer-controls {
+      .btn-group {
+        display: flex;
+        width: 100%;
+
+        .btn {
+          width: 50%;
+          justify-content: center;
+        }
+      }
+    }
+
+    .rt-tbody {
+      overflow-y: auto;
+      flex: 1 1 auto;
+    }
+
+    .ReactTable {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
 
-.hydrogen-next code, .hydrogen-next pre {
+.hydrogen-next code,
+.hydrogen-next pre {
   font-family: var(--editor-font-family);
   white-space: pre-wrap;
   word-break: normal;
 }
+
 .hydrogen-next.inspector span[style^="color"] {
   color: @text-color-info !important;
 }
@@ -437,8 +477,7 @@
 
 // @NOTE: This would pollute global style and could cause some styling issues for users
 .autocomplete-plus {
-  autocomplete-suggestion-list.select-list.popover-list
-    .suggestion-description {
+  autocomplete-suggestion-list.select-list.popover-list .suggestion-description {
     max-width: 500px;
   }
 }

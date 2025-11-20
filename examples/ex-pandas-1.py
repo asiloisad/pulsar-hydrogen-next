@@ -1,6 +1,6 @@
 # on Windows: open the shell as admin then: `pip install numpy pandas`
 # on Unix: `sudo pip install numpy pandas`
-# You might need to reload Atom after installation of dependencies if they are not found
+# You might need to reload Pulsar after installation of dependencies if they are not found
 
 import numpy as np
 import pandas as pd

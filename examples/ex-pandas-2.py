@@ -1,6 +1,6 @@
 # on Windows: open the shell as admin then: `pip install pandas`
 # on Unix: `sudo pip install pandas`
-# You might need to reload Atom after installation of dependencies if they are not found
+# You might need to reload Pulsar after installation of dependencies if they are not found
 
 import pandas as pd
 

@@ -1,6 +1,6 @@
 # on Windows: open the shell as admin then: `pip install pyqt5 matplotlib numpy`
 # on Unix: `sudo pip install pyqt5 matplotlib numpy`
-# You might need to reload Atom after installation of dependencies if they are not found
+# You might need to reload Pulsar after installation of dependencies if they are not found
 
 import matplotlib.pyplot as plt
 import numpy as np

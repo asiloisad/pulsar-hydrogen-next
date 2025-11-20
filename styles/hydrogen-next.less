@@ -427,14 +427,21 @@
   // -------------- Variable Explorer -----------------
 
   .variable-explorer {
+
+    .table-header {
+      font-weight: bold;
+    }
+
     .variable-explorer-controls {
+
       .btn-group {
         display: flex;
         width: 100%;
 
         .btn {
-          width: 50%;
+          width: 100%;
           justify-content: center;
+          margin-top: 5px;
         }
       }
     }
@@ -445,11 +452,116 @@
     }
 
     .ReactTable {
+      margin-top: 5px;
       height: 100%;
       display: flex;
       flex-direction: column;
     }
   }
+
+  .rt-noData {
+    display: none;
+  }
+
+}
+
+// ANSI color classes for Variable Explorer (used by Anser library)
+.hydrogen-next .variable-explorer  {
+    .ansi-black-fg {
+        color: #000000;
+    }
+
+    .ansi-red-fg {
+        color: #cd3131;
+    }
+
+    .ansi-green-fg {
+        color: #0dbc79;
+    }
+
+    .ansi-yellow-fg {
+        color: #e5e510;
+    }
+
+    .ansi-blue-fg {
+        color: #2472c8;
+    }
+
+    .ansi-magenta-fg {
+        color: #bc3fbc;
+    }
+
+    .ansi-cyan-fg {
+        color: #11a8cd;
+    }
+
+    .ansi-white-fg {
+        color: #e5e5e5;
+    }
+
+    .ansi-black-bg {
+        background-color: #000000;
+    }
+
+    .ansi-red-bg {
+        background-color: #cd3131;
+    }
+
+    .ansi-green-bg {
+        background-color: #0dbc79;
+    }
+
+    .ansi-yellow-bg {
+        background-color: #e5e510;
+    }
+
+    .ansi-blue-bg {
+        background-color: #2472c8;
+    }
+
+    .ansi-magenta-bg {
+        background-color: #bc3fbc;
+    }
+
+    .ansi-cyan-bg {
+        background-color: #11a8cd;
+    }
+
+    .ansi-white-bg {
+        background-color: #e5e5e5;
+    }
+
+    .ansi-bold {
+        font-weight: bold;
+    }
+
+    .ansi-dim {
+        opacity: 0.5;
+    }
+
+    .ansi-italic {
+        font-style: italic;
+    }
+
+    .ansi-underline {
+        text-decoration: underline;
+    }
+
+    .ansi-blink {
+        animation: blink 1s infinite;
+    }
+
+    .ansi-reverse {
+        filter: invert(100%);
+    }
+
+    .ansi-hidden {
+        visibility: hidden;
+    }
+
+    .ansi-strikethrough {
+        text-decoration: line-through;
+    }
 }
 
 .hydrogen-next code,

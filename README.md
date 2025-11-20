@@ -44,7 +44,9 @@ Enhancements exclusive to `hydrogen-next`:
 - Run is no longer trimmed to the cell range.
 - Added new command: `hydrogen-next:open-examples`.
 - Updated inspector workflow.
+- Fixed problem of "busy" stuck.
 - Fixed notebook import command.
+- Added variable explorer for Python.
 
 ## Alternative keymaps
 

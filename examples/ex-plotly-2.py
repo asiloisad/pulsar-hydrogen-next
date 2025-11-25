@@ -2,10 +2,7 @@
 # on Unix: `sudo pip install plotly nbformat`
 # You might need to reload Pulsar after installation of dependencies if they are not found
 
-import plotly.io as pio
-pio.renderers
-pio.renderers.default = 'sphinx_gallery'
-
+# 3D Surface plot example using plotly.graph_objects
 import plotly.graph_objects as go
 import pandas as pd
 
@@ -14,18 +11,20 @@ z_data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/a
 
 fig = go.Figure(data=go.Surface(z=z_data, showscale=False))
 fig.update_layout(
-    title=dict(text='Mt Bruno Elevation'),
-    width=400, height=400,
+    title='Mt Bruno Elevation',
+    width=500, height=500,
     margin=dict(t=40, r=0, l=20, b=20)
 )
 
-name = 'default'
-# Default parameters which are used when `layout.scene.camera` is not provided
+# Camera settings
 camera = dict(
     up=dict(x=0, y=0, z=1),
     center=dict(x=0, y=0, z=0),
     eye=dict(x=1.25, y=1.25, z=1.25)
 )
+fig.update_layout(scene_camera=camera)
 
-fig.update_layout(scene_camera=camera, title=name)
-fig
+# For Hydrogen compatibility, display the figure using IPython display
+# which outputs the native application/vnd.plotly.v1+json MIME type
+from IPython.display import display
+display(fig)

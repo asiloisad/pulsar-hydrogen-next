@@ -94,8 +94,50 @@
   }
 
   .js-plotly-plot {
+    position: relative;
+    z-index: 1;
+
     svg {
       background-color: unset;
+    }
+  }
+
+  // Ensure Plotly container div is properly positioned
+  .plotly-graph-div {
+    position: relative;
+    z-index: 1;
+  }
+
+  // Plotly container needs explicit dimensions
+  .plotly-container {
+    position: relative;
+    display: block;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    // WebGL canvas for 3D plots
+    canvas {
+      visibility: visible !important;
+      opacity: 1 !important;
+      display: block !important;
+      position: relative !important;
+    }
+
+    // Plotly 3D scene container
+    .gl-container {
+      position: relative !important;
+      z-index: 1 !important;
+    }
+  }
+
+  // Fix for 3D plots: make SVG background transparent so canvas is visible
+  .js-plotly-plot .plotly .svg-container {
+    position: relative !important;
+
+    // The main-svg has background:white inline which covers the WebGL canvas
+    // We need to make it transparent for 3D plots
+    .main-svg {
+      background: transparent !important;
     }
   }
 
@@ -145,9 +187,9 @@
 
     // Style fix for plotly toolbar
     .cell_display {
-      overflow-y: hidden;
-      display: initial;
-      height: 100%;
+      overflow: visible;
+      display: block;
+      min-height: 100px;
     }
 
     .modebar-group {

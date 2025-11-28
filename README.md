@@ -48,6 +48,70 @@ Enhancements exclusive to `hydrogen-next`:
 - Fixed notebook import command.
 - Added variable explorer for Python.
 
+## Code Block Detection
+
+When you run code without a selection, hydrogen-next intelligently detects what to execute based on cursor position.
+
+### Priority Order
+
+1. **Selection** - If text is selected, execute exactly that
+2. **Language Specials** - Python compound statements (see below)
+3. **Brackets** - Multi-line bracket expressions `()`, `[]`, `{}`
+4. **Folds** - Foldable language constructs
+5. **Single Line** - Current line as fallback
+
+### Python Support
+
+| Cursor Position | What Gets Executed |
+|-----------------|-------------------|
+| On `def`/`class` line | Entire function/class (with decorators) |
+| On `@decorator` line | Decorated function/class |
+| On `if`/`elif`/`else` line | Entire if-elif-else chain |
+| On `try`/`except`/`finally` line | Entire try block |
+| On `for`/`while` line | Loop with optional `else` |
+| On `with`/`match` line | Entire block |
+| **Inside body** | **Single line only** |
+
+### Bracket Expressions
+
+| Cursor Position | What Gets Executed |
+|-----------------|-------------------|
+| On line ending with `[`, `(`, `{` | Entire bracket block |
+| On line starting with `]`, `)`, `}` | Entire bracket block |
+| **Inside bracket block** | **Single line only** |
+
+### Examples
+
+```python
+# Cursor on "if" → executes entire if-elif-else
+if x > 0:
+    print("positive")
+elif x < 0:
+    print("negative")
+else:
+    print("zero")
+
+# Cursor on "print" inside body → executes only that line
+if x > 0:
+    print("positive")  # ← cursor here = single line
+
+# Cursor on "[" → executes entire list
+data = [
+    1,
+    2,
+    3,
+]
+
+# Cursor on "2," inside list → executes only "2,"
+data = [
+    1,
+    2,  # ← cursor here = single line
+    3,
+]
+```
+
+This allows you to execute entire blocks from control lines, while still being able to inspect individual lines inside bodies.
+
 ## Alternative keymaps
 
 You can disable the predefined keymap and use your own in `keymap.cson`. An example:

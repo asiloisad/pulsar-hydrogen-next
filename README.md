@@ -74,8 +74,125 @@ You can disable the predefined keymap and use your own in `keymap.cson`. An exam
   "shift-f8"   : "hydrogen-next:shutdown-kernel"
 ```
 
+## Plugin API (v1.3.0)
+
+Hydrogen-next provides a service API for other packages to interact with Jupyter kernels.
+
+### Consuming the Service
+
+In your `package.json`:
+
+```json
+{
+  "consumedServices": {
+    "hydrogen.provider": {
+      "versions": {
+        "^1.3.0": "consumeHydrogen"
+      }
+    }
+  }
+}
+```
+
+In your package:
+
+```javascript
+module.exports = {
+  consumeHydrogen(hydrogen) {
+    this.hydrogen = hydrogen;
+  },
+
+  async example() {
+    const kernel = this.hydrogen.getActiveKernel();
+    const result = await kernel.execute("print('Hello')");
+    console.log(result.status); // 'ok' or 'error'
+  }
+};
+```
+
+### HydrogenProvider Methods
+
+| Method | Description |
+|--------|-------------|
+| `getActiveKernel()` | Get the kernel for the active editor |
+| `onDidChangeKernel(callback)` | Subscribe to kernel changes |
+| `getCellRange(editor)` | Get the current cell range |
+
+### HydrogenKernel API
+
+#### Execution
+
+| Method | Description |
+|--------|-------------|
+| `execute(code)` | Execute code, returns `Promise<{status, outputs, error}>` |
+| `executeWithCallback(code, callback)` | Execute with streaming callback |
+
+#### State & Control
+
+| Property/Method | Description |
+|-----------------|-------------|
+| `executionState` | Current state: `'idle'`, `'busy'`, `'starting'` |
+| `executionCount` | Current execution count |
+| `lastExecutionTime` | Last execution time string (e.g., `"1.23s"`) |
+| `onDidChangeExecutionState(callback)` | Subscribe to state changes, returns `Disposable` |
+| `interrupt()` | Interrupt running execution |
+| `restart([callback])` | Restart the kernel |
+| `shutdown()` | Shutdown the kernel |
+
+#### Introspection
+
+| Method | Description |
+|--------|-------------|
+| `complete(code)` | Get completions, returns `Promise<{matches, ...}>` |
+| `inspect(code, cursorPos)` | Get documentation, returns `Promise<{data, found}>` |
+
+#### Kernel Info
+
+| Property/Method | Description |
+|-----------------|-------------|
+| `language` | Kernel language (e.g., `"python"`) |
+| `displayName` | Kernel display name (e.g., `"Python 3"`) |
+| `kernelSpec` | Full kernel spec object |
+| `getConnectionFile()` | Path to kernel connection file |
+
+#### Events & Middleware
+
+| Method | Description |
+|--------|-------------|
+| `onDidDestroy(callback)` | Called when kernel is destroyed |
+| `addMiddleware(middleware)` | Add execution middleware |
+
+### Example: Execute and Handle Results
+
+```javascript
+async function runCode(hydrogen) {
+  const kernel = hydrogen.getActiveKernel();
+
+  // Simple execution
+  const result = await kernel.execute("x = 42\nprint(x)");
+
+  if (result.status === "ok") {
+    console.log("Outputs:", result.outputs);
+  } else {
+    console.error(`${result.error.ename}: ${result.error.evalue}`);
+  }
+
+  // Monitor state
+  const disposable = kernel.onDidChangeExecutionState((state) => {
+    console.log("Kernel state:", state);
+  });
+
+  // Get completions
+  const completions = await kernel.complete("import nu");
+  console.log(completions.matches); // ['numpy', 'numbers', ...]
+
+  // Cleanup
+  disposable.dispose();
+}
+```
+
 # Contributing
 
-Got ideas to make this package better, found a bug, or want to help add new features? Just drop your thoughts on GitHub — any feedback’s welcome!
+Got ideas to make this package better, found a bug, or want to help add new features? Just drop your thoughts on GitHub — any feedback's welcome!
 
 Thanks to [@mauricioszabo](https://github.com/mauricioszabo) for showing me a way to get hydrogen to work in the latest Electron.

@@ -30,8 +30,10 @@
   'ctrl-shift-backspace': 'hydrogen-next:clear-results'
   'alt-i': 'hydrogen-next:show-inspector'
   'alt-shift-i': 'hydrogen-next:hide-inspector'
+  'alt-e': 'hydrogen-next:toggle-exec-panel'
 
 '.platform-darwin atom-workspace':
   'cmd-alt-backspace': 'hydrogen-next:clear-results'
   'alt-i': 'hydrogen-next:show-inspector'
   'alt-shift-i': 'hydrogen-next:hide-inspector'
+  'alt-e': 'hydrogen-next:toggle-exec-panel'

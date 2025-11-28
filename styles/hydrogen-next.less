@@ -446,14 +446,67 @@
     height: 100%;
 
     .watch-view {
-      .watch-input {
-        margin-top: 10px;
-        padding: 3px;
-        border-radius: 3px;
-        background-color: @syntax-background-color;
-        font-size: @font-size;
-        min-height: 3em;
-        border: 1px solid @base-border-color;
+      margin-top: 10px;
+      border: 1px solid @base-border-color;
+      border-radius: 3px;
+      overflow: hidden;
+
+      .watch-toolbar {
+        display: flex;
+        background-color: @tool-panel-background-color;
+        border-bottom: 1px solid @base-border-color;
+        padding: 4px;
+        gap: 4px;
+
+        .btn {
+          flex-shrink: 0;
+          border-radius: 3px;
+
+          &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+          }
+        }
+
+        .watch-run-btn {
+          &:not(:disabled):hover {
+            background-color: @background-color-success;
+            color: @text-color;
+          }
+        }
+
+        .watch-pause-btn {
+          &:not(:disabled):hover {
+            background-color: @background-color-warning;
+            color: @text-color;
+          }
+        }
+
+        .watch-clear-btn {
+          &:hover {
+            background-color: @background-color-info;
+            color: @text-color;
+          }
+        }
+
+        .watch-remove-btn {
+          margin-left: auto;
+
+          &:hover {
+            background-color: @background-color-error;
+            color: @text-color;
+          }
+        }
+      }
+
+      .watch-editor-container {
+        .watch-input {
+          padding: 3px;
+          font-size: @font-size;
+          min-height: 2.5em;
+          border: none;
+          background-color: @syntax-background-color;
+        }
       }
     }
 
@@ -462,7 +515,7 @@
       display: block;
 
       .btn {
-        width: 50%;
+        width: 100%;
       }
     }
 

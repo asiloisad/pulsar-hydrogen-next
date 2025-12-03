@@ -546,8 +546,11 @@
       padding-bottom: @component-padding;
     }
 
-    &.password .scroll-view {
-      -webkit-text-security: disc;
+    &.password {
+      // Mask password input - target the actual text spans
+      .line span {
+        -webkit-text-security: disc;
+      }
     }
   }
 

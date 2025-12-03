@@ -44,6 +44,21 @@
     display: block;
   }
 
+  // LaTeX inline math should stay inline
+  .latex-math-inline {
+    display: inline;
+
+    svg {
+      display: inline;
+      vertical-align: middle;
+    }
+  }
+
+  .latex-text {
+    display: inline;
+    padding: 0 0.3em; // Space around text between math expressions
+  }
+
   table {
     border: 1px double average(@syntax-text-color, @base-border-color);
     border-collapse: collapse;
@@ -644,8 +659,8 @@
 
 }
 
-// ANSI color classes for Variable Explorer (used by Anser library)
-.hydrogen-next .variable-explorer {
+// ANSI color classes (used by Anser library for terminal output)
+.hydrogen-next {
   .ansi-black-fg {
     color: #000000;
   }
@@ -708,6 +723,39 @@
 
   .ansi-white-bg {
     background-color: #e5e5e5;
+  }
+
+  // Bright foreground colors
+  .ansi-bright-black-fg {
+    color: #666666;
+  }
+
+  .ansi-bright-red-fg {
+    color: #f14c4c;
+  }
+
+  .ansi-bright-green-fg {
+    color: #23d18b;
+  }
+
+  .ansi-bright-yellow-fg {
+    color: #f5f543;
+  }
+
+  .ansi-bright-blue-fg {
+    color: #3b8eea;
+  }
+
+  .ansi-bright-magenta-fg {
+    color: #d670d6;
+  }
+
+  .ansi-bright-cyan-fg {
+    color: #29b8db;
+  }
+
+  .ansi-bright-white-fg {
+    color: #ffffff;
   }
 
   .ansi-bold {

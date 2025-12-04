@@ -119,7 +119,7 @@
     "react-dom": "^19.0.0",
     "spawnteract": "^5.0.1",
     "uuid": "^11.1.0",
-    "vega-embed": "^7.1.0",
+    "vega-embed": "^6.29.0",
     "ws": "^8.18.3",
     "xmlhttprequest": "^1.8.0",
     "zeromq": "^6.5.0"

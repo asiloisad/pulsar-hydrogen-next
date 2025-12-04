@@ -107,6 +107,7 @@
   "dependencies": {
     "@jupyterlab/services": "^7.5.0",
     "@nteract/commutable": "^7.5.1",
+    "@nteract/any-vega": "github:nteract/any-vega#be25147",
     "anser": "^2.3.3",
     "atom-select-list": "^0.8.1",
     "kernelspecs": "^2.0.1",
@@ -119,7 +120,6 @@
     "react-dom": "^19.0.0",
     "spawnteract": "^5.0.1",
     "uuid": "^11.1.0",
-    "vega-embed": "^6.29.0",
     "ws": "^8.18.3",
     "xmlhttprequest": "^1.8.0",
     "zeromq": "^6.5.0"

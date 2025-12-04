@@ -258,6 +258,17 @@ async function runCode(hydrogen) {
 }
 ```
 
+## scroll-map integration
+
+The package integrates with [scroll-map](https://github.com/asiloisad/pulsar-scroll-map) to display cell breakpoint markers on the scroll bar. When both packages are installed, cell boundary markers appear on the scroll bar for quick navigation between cells. The layer can be enabled/disabled in the package settings under "Scroll-map layer".
+
+To customize the marker appearance:
+```less
+.scroll-map .scroll-item.hydrogen-layer {
+  background-color: @ui-site-color-4;
+}
+```
+
 # Contributing
 
 Got ideas to make this package better, found a bug, or want to help add new features? Just drop your thoughts on GitHub — any feedback's welcome!

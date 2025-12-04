@@ -85,6 +85,11 @@
       "versions": {
         "^1.0.0": "consumeStatusBar"
       }
+    },
+    "scroll-map": {
+      "versions": {
+        "^1.0.0": "consumeScrollMap"
+      }
     }
   },
   "providedServices": {

@@ -47,6 +47,9 @@ Enhancements exclusive to `hydrogen-next`:
 - Fixed problem of "busy" stuck.
 - Fixed notebook import command.
 - Added variable explorer for Python.
+- Fixed overcount issue by internal queue.
+- Inline methods in sequence.
+- Added exec panel with history.
 
 ## Code Block Detection
 

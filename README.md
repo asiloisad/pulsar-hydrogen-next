@@ -24,9 +24,10 @@ To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.de
 - Kernel-powered completions (similar to Chrome DevTools autocomplete).
 - Inline inspection of code objects from the running kernel.
 - One kernel per language (share the same namespace across files).
-- Interrupt or restart kernels when needed (Windows exclueded).
+- Interrupt or restart kernels when needed (Windows excluded).
 - Support for custom kernel connections (e.g. inside Docker).
 - Cell markers compatible with [navigation-panel](https://github.com/asiloisad/pulsar-navigation-panel).
+- Cell markers compatible with [scroll-map](https://github.com/asiloisad/pulsar-scroll-map).
 
 Enhancements exclusive to `hydrogen-next`:
 
@@ -114,32 +115,6 @@ data = [
 ```
 
 This allows you to execute entire blocks from control lines, while still being able to inspect individual lines inside bodies.
-
-## Alternative keymaps
-
-You can disable the predefined keymap and use your own in `keymap.cson`. An example:
-
-```cson
-"atom-text-editor:not([mini])":
-  "ctrl-enter" : "hydrogen-next:run"
-  "shift-enter": "hydrogen-next:run-and-move-down"
-  "f5"         : "hydrogen-next:run-all"
-  "alt-f5"     : "hydrogen-next:recalculate-all"
-  "shift-f5"   : "hydrogen-next:run-all-above"
-  "ctrl-f5"    : "hydrogen-next:recalculate-all-above"
-  "f6"         : "hydrogen-next:run-all-inline"
-  "alt-f6"     : "hydrogen-next:recalculate-all-inline"
-  "shift-f6"   : "hydrogen-next:run-all-above-inline"
-  "ctrl-f6"    : "hydrogen-next:recalculate-all-above-inline"
-  "f7"         : "hydrogen-next:run"
-  "ctrl-f7"    : "hydrogen-next:run-cell"
-  "alt-f7"     : "hydrogen-next:clear-and-center"
-  "shift-f7"   : "hydrogen-next:interrupt-kernel"
-  "f8"         : "hydrogen-next:run-and-move-down"
-  "ctrl-f8"    : "hydrogen-next:run-cell-and-move-down"
-  "alt-f8"     : "hydrogen-next:clear-and-restart"
-  "shift-f8"   : "hydrogen-next:shutdown-kernel"
-```
 
 ## Plugin API (v1.3.0)
 
@@ -258,19 +233,6 @@ async function runCode(hydrogen) {
 }
 ```
 
-## scroll-map integration
-
-The package integrates with [scroll-map](https://github.com/asiloisad/pulsar-scroll-map) to display cell breakpoint markers on the scroll bar. When both packages are installed, cell boundary markers appear on the scroll bar for quick navigation between cells. The layer can be enabled/disabled in the package settings under "Scroll-map layer".
-
-To customize the marker appearance:
-```less
-.scroll-map .scroll-item.hydrogen-layer {
-  background-color: @ui-site-color-4;
-}
-```
-
 # Contributing
 
 Got ideas to make this package better, found a bug, or want to help add new features? Just drop your thoughts on GitHub — any feedback's welcome!
-
-Thanks to [@mauricioszabo](https://github.com/mauricioszabo) for showing me a way to get hydrogen to work in the latest Electron.

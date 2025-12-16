@@ -85,6 +85,11 @@
       "versions": {
         "^1.0.0": "consumeStatusBar"
       }
+    },
+    "claude-chat": {
+      "versions": {
+        "^1.0.0": "consumeClaudeChat"
+      }
     }
   },
   "providedServices": {

@@ -12,7 +12,7 @@ To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.de
 
 #### Python
 
-Use conda to create a dedicated environment and install the ipykernel package 
+Use conda to create a dedicated environment and install the ipykernel package
 ```
 conda create -n pyenv python=3 ipykernel
 conda activate pyenv
@@ -20,7 +20,12 @@ python -m ipykernel install --name pyenv #always install your kernels with a nam
 ```
 For more examples see this page: https://nteract.io/kernels/python
 
-### Other kernels
+#### Managing kernels
+
+Use the `jupyter kernelspec list` command to view available kernels
+
+
+#### Other kernels
 
 See the gitbooks hydrogen documentation
 https://nteract.gitbooks.io/hydrogen/content/docs/Installation.html

@@ -8,6 +8,23 @@ A package provide an interactive coding environment that supports Python, R, Jav
 
 To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.dev/packages/hydrogen-next) in the Install pane of the Pulsar settings or run `ppm install hydrogen-next`. Alternatively, you can run `ppm install asiloisad/pulsar-hydrogen-next` to install a package directly from the GitHub repository.
 
+### Kernel Setup
+
+#### Python
+
+Use conda to create a dedicated environment
+```
+conda create -n pyenv python=3 ipykernel
+conda activate pyenv
+python -m ipykernel install --name pyenv #always install your kernels with a name
+```
+For more examples see this page: https://nteract.io/kernels/python
+
+### Other kernels
+
+See the gitbooks hydrogen documentation
+https://nteract.gitbooks.io/hydrogen/content/docs/Installation.html
+
 ## Useful links
 
 - https://github.com/nteract/hydrogen
@@ -51,6 +68,7 @@ Enhancements exclusive to `hydrogen-next`:
 - Fixed overcount issue by internal queue.
 - Inline methods in sequence.
 - Added exec panel with history.
+- Setting to manage autoreload extension for ipython
 
 ## Code Block Detection
 

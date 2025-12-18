@@ -12,7 +12,7 @@ To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.de
 
 #### Python
 
-Use conda to create a dedicated environment
+Use conda to create a dedicated environment and install the ipykernel package 
 ```
 conda create -n pyenv python=3 ipykernel
 conda activate pyenv

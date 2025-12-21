@@ -27,7 +27,7 @@ To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.de
 - Interrupt or restart kernels when needed (Windows excluded).
 - Support for custom kernel connections (e.g. inside Docker).
 - Cell markers compatible with [navigation-panel](https://github.com/asiloisad/pulsar-navigation-panel).
-- Cell markers compatible with [scroll-map](https://github.com/asiloisad/pulsar-scroll-map).
+- Cell markers compatible with [scrollmap](https://github.com/asiloisad/pulsar-scrollmap).
 
 Enhancements exclusive to `hydrogen-next`:
 

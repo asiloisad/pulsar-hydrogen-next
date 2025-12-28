@@ -1,62 +1,34 @@
 # hydrogen-next
 
-A package provide an interactive coding environment that supports Python, R, JavaScript and other Jupyter kernels.
+Run code interactively with Jupyter kernels. Supports Python, R, JavaScript, and other languages with rich output including plots, images, HTML, and LaTeX.
 
 ![demo](https://github.com/asiloisad/pulsar-hydrogen-next/blob/master/assets/demo.gif?raw=true)
+
+## Features
+
+- **Interactive execution**: Run lines, selections, or code blocks with inline results.
+- **Rich media output**: Displays plots, images, video, HTML, LaTeX, and more.
+- **Watch expressions**: Auto-run and track variables.
+- **Kernel completions**: Autocomplete powered by the running kernel.
+- **Code introspection**: Inline inspection of objects from the kernel.
+- **Shared namespace**: One kernel per language across files.
+- **Smart code detection**: Intelligently detects Python blocks, brackets, and folds.
+- **Variable explorer**: Browse Python variables in a dedicated panel.
+- **Exec panel**: Command history with re-execution support.
+- **Multi-cursor support**: Run with multiple cursors and selections.
+- **Custom connections**: Connect to remote kernels (e.g., Docker).
+- **Navigation panel**: Cell markers via [navigation-panel](https://github.com/asiloisad/pulsar-navigation-panel).
+- **Scrollmap**: Cell markers via [scrollmap](https://github.com/asiloisad/pulsar-scrollmap).
 
 ## Installation
 
 To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.dev/packages/hydrogen-next) in the Install pane of the Pulsar settings or run `ppm install hydrogen-next`. Alternatively, you can run `ppm install asiloisad/pulsar-hydrogen-next` to install a package directly from the GitHub repository.
 
-## Useful links
-
-- https://github.com/nteract/hydrogen
-- https://nteract.gitbooks.io/hydrogen/content/
-- https://blog.nteract.io/hydrogen-interactive-computing-in-atom-89d291bcc4dd
-
-## Features
-
-`Hydrogen` & `hydrogen-next` core features:
-
-- Execute a line, selection, or block of code.
-- Rich media output: plots, images, video, HTML, LaTeX, and more.
-- Watch expressions to automatically re-run and track variables.
-- Kernel-powered completions (similar to Chrome DevTools autocomplete).
-- Inline inspection of code objects from the running kernel.
-- One kernel per language (share the same namespace across files).
-- Interrupt or restart kernels when needed (Windows excluded).
-- Support for custom kernel connections (e.g. inside Docker).
-- Cell markers compatible with [navigation-panel](https://github.com/asiloisad/pulsar-navigation-panel).
-- Cell markers compatible with [scrollmap](https://github.com/asiloisad/pulsar-scrollmap).
-
-Enhancements exclusive to `hydrogen-next`:
-
-- Full compatibility with Pulsar and PulsarNext without rebuilding.
-- Updated dependencies: `jmp` and `zeromq` now use latest versions.
-- Repaired socket monitoring for improved kernel stability.
-- TypeScript code converted to JavaScript.
-- Removed outdated text-editor context menu.
-- Integrated `hydrogen-run`.
-- Integrated `cell-navigation`.
-- Removed breakpoints grammar, because tree-sitter is missing.
-- Integrated `hydrogen-cell-separator` as markers.
-- Correct evaluation of Python `if/elif/else` and `try/except/else/finally`.
-- Run command supports multiple cursors and multi-selections.
-- Run is no longer trimmed to the cell range.
-- Added new command: `hydrogen-next:open-examples`.
-- Updated inspector workflow.
-- Fixed problem of "busy" stuck.
-- Fixed notebook import command.
-- Added variable explorer for Python.
-- Fixed overcount issue by internal queue.
-- Inline methods in sequence.
-- Added exec panel with history.
-
-## Code Block Detection
+## Code block detection
 
 When you run code without a selection, hydrogen-next intelligently detects what to execute based on cursor position.
 
-### Priority Order
+### Priority order
 
 1. **Selection** - If text is selected, execute exactly that
 2. **Language Specials** - Python compound statements (see below)
@@ -64,10 +36,10 @@ When you run code without a selection, hydrogen-next intelligently detects what 
 4. **Folds** - Foldable language constructs
 5. **Single Line** - Current line as fallback
 
-### Python Support
+### Python support
 
 | Cursor Position | What Gets Executed |
-|-----------------|-------------------|
+| --- | --- |
 | On `def`/`class` line | Entire function/class (with decorators) |
 | On `@decorator` line | Decorated function/class |
 | On `if`/`elif`/`else` line | Entire if-elif-else chain |
@@ -76,10 +48,10 @@ When you run code without a selection, hydrogen-next intelligently detects what 
 | On `with`/`match` line | Entire block |
 | **Inside body** | **Single line only** |
 
-### Bracket Expressions
+### Bracket expressions
 
 | Cursor Position | What Gets Executed |
-|-----------------|-------------------|
+| --- | --- |
 | On line ending with `[`, `(`, `{` | Entire bracket block |
 | On line starting with `]`, `)`, `}` | Entire bracket block |
 | **Inside bracket block** | **Single line only** |
@@ -116,9 +88,9 @@ data = [
 
 This allows you to execute entire blocks from control lines, while still being able to inspect individual lines inside bodies.
 
-## Plugin API (v1.3.0)
+## Service
 
-Hydrogen-next provides a service API for other packages to interact with Jupyter kernels.
+The package provides a `hydrogen.provider` service for other packages to interact with Jupyter kernels.
 
 ### Consuming the Service
 
@@ -155,7 +127,7 @@ module.exports = {
 ### HydrogenProvider Methods
 
 | Method | Description |
-|--------|-------------|
+| --- | --- |
 | `getActiveKernel()` | Get the kernel for the active editor |
 | `onDidChangeKernel(callback)` | Subscribe to kernel changes |
 | `getCellRange(editor)` | Get the current cell range |
@@ -165,14 +137,14 @@ module.exports = {
 #### Execution
 
 | Method | Description |
-|--------|-------------|
+| --- | --- |
 | `execute(code)` | Execute code, returns `Promise<{status, outputs, error}>` |
 | `executeWithCallback(code, callback)` | Execute with streaming callback |
 
 #### State & Control
 
 | Property/Method | Description |
-|-----------------|-------------|
+| --- | --- |
 | `executionState` | Current state: `'idle'`, `'busy'`, `'starting'` |
 | `executionCount` | Current execution count |
 | `lastExecutionTime` | Last execution time string (e.g., `"1.23s"`) |
@@ -184,14 +156,14 @@ module.exports = {
 #### Introspection
 
 | Method | Description |
-|--------|-------------|
+| --- | --- |
 | `complete(code)` | Get completions, returns `Promise<{matches, ...}>` |
 | `inspect(code, cursorPos)` | Get documentation, returns `Promise<{data, found}>` |
 
-#### Kernel Info
+#### Kernel info
 
 | Property/Method | Description |
-|-----------------|-------------|
+| --- | --- |
 | `language` | Kernel language (e.g., `"python"`) |
 | `displayName` | Kernel display name (e.g., `"Python 3"`) |
 | `kernelSpec` | Full kernel spec object |
@@ -200,7 +172,7 @@ module.exports = {
 #### Events & Middleware
 
 | Method | Description |
-|--------|-------------|
+| --- | --- |
 | `onDidDestroy(callback)` | Called when kernel is destroyed |
 | `addMiddleware(middleware)` | Add execution middleware |
 
@@ -233,6 +205,6 @@ async function runCode(hydrogen) {
 }
 ```
 
-# Contributing
+## Contributing
 
 Got ideas to make this package better, found a bug, or want to help add new features? Just drop your thoughts on GitHub — any feedback's welcome!

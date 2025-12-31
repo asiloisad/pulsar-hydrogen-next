@@ -112,8 +112,8 @@
   "dependencies": {
     "@jupyterlab/services": "^7.5.0",
     "@mathjax/src": "^4.0.0",
-    "@nteract/any-vega": "github:nteract/any-vega#be25147",
     "@nteract/commutable": "^7.5.1",
+    "@nteract/any-vega": "^1.0.1",
     "anser": "^2.3.3",
     "kernelspecs": "^2.0.1",
     "lodash": "^4.17.21",

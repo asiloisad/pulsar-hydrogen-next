@@ -24,6 +24,23 @@ Run code interactively with Jupyter kernels. Supports Python, R, JavaScript, and
 
 To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.dev/packages/hydrogen-next) in the Install pane of the Pulsar settings or run `ppm install hydrogen-next`. Alternatively, you can run `ppm install asiloisad/pulsar-hydrogen-next` to install a package directly from the GitHub repository.
 
+## Kernel selection
+
+When multiple kernels are available for a language, you can specify which kernel to use with a magic comment `#::` on the first line.
+
+```python
+#:: python3
+import numpy as np
+```
+
+Matching rules:
+
+- **Case-sensitive**: Must match exactly (e.g., `python3` not `Python3`)
+- **Kernel name**: The directory name from `jupyter kernelspec list` (e.g., `python3`)
+- **Display name**: The human-readable name (e.g., `Python 3.13`)
+
+If no match is found, falls back to normal behavior (picker or auto-select).
+
 ## Code block detection
 
 When you run code without a selection, hydrogen-next intelligently detects what to execute based on cursor position.

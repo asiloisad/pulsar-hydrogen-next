@@ -41,6 +41,33 @@ Matching rules:
 
 If no match is found, falls back to normal behavior (picker or auto-select).
 
+In the kernel picker, press **Ctrl+Enter** to insert the selected kernel as a magic comment instead of starting it.
+
+## Kernel gateways
+
+Connect to remote or local Jupyter servers by configuring kernel gateways in settings.
+
+Example of local jupyter server:
+
+```bash
+jupyter server --ServerApp.token='test123'
+```
+
+In the hydrogen-next settings, add gateway entries as JSON:
+
+```json
+[
+  {
+    "name": "Local Jupyter",
+    "options": {
+      "baseUrl": "http://localhost:8888",
+    }
+  }
+]
+```
+
+Use `Hydrogen: Connect to Remote Kernel` command to select a gateway and kernel.
+
 ## Code block detection
 
 When you run code without a selection, hydrogen-next intelligently detects what to execute based on cursor position.

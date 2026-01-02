@@ -37,3 +37,6 @@
   'alt-i': 'hydrogen-next:show-inspector'
   'alt-shift-i': 'hydrogen-next:hide-inspector'
   'alt-e': 'hydrogen-next:toggle-exec-panel'
+
+'.hydrogen-next.kernel-picker atom-text-editor[mini]':
+  'ctrl-enter': 'select-list:kernel'

@@ -1,42 +1,16 @@
-'.platform-win32 atom-text-editor:not([mini]), .platform-linux atom-text-editor:not([mini])':
+'.platform-win32 atom-text-editor:not([mini]),
+ .platform-linux atom-text-editor:not([mini])':
   'ctrl-enter': 'hydrogen-next:run'
   'shift-enter': 'hydrogen-next:run-and-move-down'
   'ctrl-alt-enter': 'hydrogen-next:run-cell'
   'shift-alt-enter': 'hydrogen-next:run-cell-and-move-down'
-  'ctrl-ctrl-enter': 'hydrogen-next:run-all'
-  "alt-j": "hydrogen-next:previous-cell",
-  "alt-k": "hydrogen-next:next-cell",
-  "alt-l": "hydrogen-next:select-cell",
-  "shift-alt-j": "hydrogen-next:select-up",
-  "shift-alt-k": "hydrogen-next:select-down",
-  "ctrl-alt-j": "hydrogen-next:move-cell-up"
-  "ctrl-alt-k": "hydrogen-next:move-cell-down",
+  'ctrl-shift-enter': 'hydrogen-next:run-all'
+  'ctrl-shift-backspace': 'hydrogen-next:clear-results'
 
 '.platform-darwin atom-text-editor:not([mini])':
   'cmd-enter': 'hydrogen-next:run'
   'shift-enter': 'hydrogen-next:run-and-move-down'
   'cmd-alt-enter': 'hydrogen-next:run-cell'
   'shift-alt-enter': 'hydrogen-next:run-cell-and-move-down'
-  'cmd-shift-alt-enter': 'hydrogen-next:run-all'
-  "alt-j": "hydrogen-next:previous-cell",
-  "alt-k": "hydrogen-next:next-cell",
-  "alt-l": "hydrogen-next:select-cell",
-  "shift-alt-j": "hydrogen-next:select-up",
-  "shift-alt-k": "hydrogen-next:select-down",
-  "cmd-alt-j": "hydrogen-next:move-cell-up"
-  "cmd-alt-k": "hydrogen-next:move-cell-down",
-
-'.platform-win32 atom-workspace, .platform-linux atom-workspace':
-  'ctrl-shift-backspace': 'hydrogen-next:clear-results'
-  'alt-i': 'hydrogen-next:show-inspector'
-  'alt-shift-i': 'hydrogen-next:hide-inspector'
-  'alt-e': 'hydrogen-next:toggle-exec-panel'
-
-'.platform-darwin atom-workspace':
+  'cmd-shift-enter': 'hydrogen-next:run-all'
   'cmd-alt-backspace': 'hydrogen-next:clear-results'
-  'alt-i': 'hydrogen-next:show-inspector'
-  'alt-shift-i': 'hydrogen-next:hide-inspector'
-  'alt-e': 'hydrogen-next:toggle-exec-panel'
-
-'.hydrogen-next.kernel-picker atom-text-editor[mini]':
-  'ctrl-enter': 'select-list:kernel'

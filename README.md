@@ -26,11 +26,16 @@ To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.de
 
 ## Kernel selection
 
-When multiple kernels are available for a language, you can specify which kernel to use with a magic comment `#::` on the first line.
+When multiple kernels are available for a language, you can specify which kernel to use with a magic comment `<comment>:: kernelname` on the first line. The comment character is automatically detected based on the language:
 
 ```python
 #:: python3
 import numpy as np
+```
+
+```javascript
+//:: deno
+console.log("Hello from Deno");
 ```
 
 Matching rules:
@@ -60,7 +65,7 @@ In the hydrogen-next settings, add gateway entries as JSON:
   {
     "name": "Local Jupyter",
     "options": {
-      "baseUrl": "http://localhost:8888",
+      "baseUrl": "http://localhost:8888"
     }
   }
 ]

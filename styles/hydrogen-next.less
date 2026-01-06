@@ -176,12 +176,15 @@
     padding: 0 0.25em 0 0.25em;
   }
 
-  .inline-container.icon::before {
-    font-size: 80%;
+  .inline-container.icon {
     width: 1.2em;
-    margin: 0;
     text-align: center;
-    height: 100%;
+    &::before {
+      font-size: 80%;
+      margin: 0;
+      vertical-align: -10%;
+      line-height: inherit;
+    }
   }
 
   // ---------- Multiline Output ------------

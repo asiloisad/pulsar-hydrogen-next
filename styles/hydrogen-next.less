@@ -206,6 +206,21 @@
   .multiline-container .hydrogen_cell_display {
     padding: @component-padding;
 
+    // LaTeX: shrink container to fit SVG
+    &:has(.latex-display) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .latex-display {
+      line-height: 0;
+
+      svg {
+        display: block;
+      }
+    }
+
     // Style fix for plotly toolbar
     .cell_display {
       overflow: visible;

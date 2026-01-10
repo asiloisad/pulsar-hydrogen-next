@@ -19,6 +19,7 @@ Run code interactively with Jupyter kernels. Supports Python, R, JavaScript, and
 - **Custom connections**: Connect to remote kernels (e.g., Docker).
 - **Navigation panel**: Cell markers via [navigation-panel](https://github.com/asiloisad/pulsar-navigation-panel).
 - **Scrollmap**: Cell markers via [scrollmap](https://github.com/asiloisad/pulsar-scrollmap).
+- **AI integration**: Attach code input and output to [claude-chat](https://github.com/asiloisad/pulsar-claude-chat) for AI-assisted analysis.
 
 ## Installation
 

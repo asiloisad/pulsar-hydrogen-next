@@ -199,17 +199,16 @@
 
   .multiline-container .hydrogen_cell_display {
     padding: @component-padding;
+    gap: @component-padding;
 
-    // LaTeX: shrink container to fit SVG
+    // LaTeX: center SVG outputs while keeping vertical stacking
     &:has(.latex-display) {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
     }
 
     .latex-display {
       line-height: 0;
-
       svg {
         display: block;
       }

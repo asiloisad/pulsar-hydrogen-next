@@ -266,6 +266,39 @@ async function runCode(hydrogen) {
 }
 ```
 
+## Shared Module API
+
+hydrogen-next exposes a shared module that allows dependent packages (like jupyter-next) to reuse kernel management and rendering components.
+
+### Kernel Registration
+
+External packages can register their kernels with hydrogen-next, making them visible to tools like Variable Explorer, Kernel Monitor, and Inspector:
+
+```javascript
+const hydrogen = atom.packages.getLoadedPackage('hydrogen-next');
+const shared = require(path.join(hydrogen.path, 'lib', 'shared'));
+
+// Register a kernel
+shared.registerKernel(kernel, filePath, editor, grammar);
+
+// Set as current kernel (for Variable Explorer, etc.)
+shared.setCurrentKernel(kernel);
+
+// Unregister on shutdown
+shared.unregisterKernel(kernel);
+```
+
+### Available Exports
+
+| Category | Exports |
+| --- | --- |
+| **Kernel** | `KernelManager`, `registerKernel`, `unregisterKernel`, `setCurrentKernel`, `getStore` |
+| **Output Rendering** | `Display`, `Output`, `RichMedia`, `StreamText`, `KernelOutputError` |
+| **Output Utilities** | `reduceOutputs`, `normalizeOutput`, `getBestMimeType`, `truncateOutput` |
+| **ANSI Handling** | `ansiToHtml`, `stripAnsi`, `escapeCarriageReturn` |
+| **Timing** | `formatExecutionTime`, `createExecutionTimeTracker` |
+| **Utilities** | `kernelSpecProvidesGrammar`, `tildify`, `sanitizeHtml` |
+
 ## Contributing
 
 Got ideas to make this package better, found a bug, or want to help add new features? Just drop your thoughts on GitHub — any feedback's welcome!

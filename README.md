@@ -295,7 +295,7 @@ shared.unregisterKernel(kernel);
 | **Kernel** | `KernelManager`, `registerKernel`, `unregisterKernel`, `setCurrentKernel`, `getStore` |
 | **Output Rendering** | `Display`, `Output`, `RichMedia`, `StreamText`, `KernelOutputError` |
 | **Output Utilities** | `reduceOutputs`, `normalizeOutput`, `getBestMimeType`, `truncateOutput` |
-| **ANSI Handling** | `ansiToHtml`, `stripAnsi`, `escapeCarriageReturn` |
+| **ANSI Handling** | `AnsiText`, `escapeCarriageReturn` |
 | **Timing** | `formatExecutionTime`, `createExecutionTimeTracker` |
 | **Utilities** | `kernelSpecProvidesGrammar`, `tildify`, `sanitizeHtml` |
 

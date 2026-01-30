@@ -7,7 +7,7 @@ Run code interactively with Jupyter kernels. Supports Python, R, JavaScript, and
 ## Features
 
 - **Interactive execution**: Run lines, selections, or code blocks with inline results.
-- **Rich media output**: Displays plots, images, video, HTML, LaTeX, and more. Ctrl+Click to open images in image-editor.
+- **Rich media output**: Displays plots, images, video, HTML, LaTeX, and more. Ctrl+Click to open images in [image-editor](https://github.com/asiloisad/pulsar-image-editor).
 - **Watch expressions**: Auto-run and track variables.
 - **Kernel completions**: Autocomplete powered by the running kernel.
 - **Code introspection**: Inline inspection of objects from the kernel.

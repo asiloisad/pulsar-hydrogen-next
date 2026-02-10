@@ -25,6 +25,81 @@ Run code interactively with Jupyter kernels. Supports Python, R, JavaScript, and
 
 To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.dev/packages/hydrogen-next) in the Install pane of the Pulsar settings or run `ppm install hydrogen-next`. Alternatively, you can run `ppm install asiloisad/pulsar-hydrogen-next` to install a package directly from the GitHub repository.
 
+## Kernel installation
+
+hydrogen-next requires Jupyter kernels to be installed on your system. A kernel is a language-specific backend that executes your code. You can install kernels for many languages — see the [full list of available kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) on the Jupyter wiki.
+
+### Python (IPython)
+
+Python is the most common kernel. Install it with:
+
+```bash
+pip install ipykernel
+python -m ipykernel install --user
+```
+
+To register a kernel from a **virtual environment**, activate it first and install with a display name:
+
+```bash
+source myenv/bin/activate        # Linux/macOS
+myenv\Scripts\activate           # Windows
+pip install ipykernel
+python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+```
+
+The `--name` flag sets the kernel directory name (used in [magic comments](#kernel-selection)), and `--display-name` sets the label shown in the kernel picker. Once registered, the kernel remains available even when the venv is not activated — it points directly to the venv's Python interpreter.
+
+To remove a kernel you no longer need:
+
+```bash
+jupyter kernelspec uninstall myenv
+```
+
+See the [IPython kernel documentation](https://ipython.readthedocs.io/en/stable/install/kernel_install.html) for more details.
+
+### R (IRkernel)
+
+Install the IRkernel package from R and register it with Jupyter:
+
+```bash
+R -e "install.packages('IRkernel'); IRkernel::installspec()"
+```
+
+See the [IRkernel documentation](https://irkernel.github.io/installation/) for more details.
+
+### JavaScript / TypeScript
+
+Several JavaScript runtimes provide Jupyter kernels. For **IJavascript**:
+
+```bash
+npm install -g ijavascript
+ijsinstall
+```
+
+For **Deno**, the kernel is built-in:
+
+```bash
+deno jupyter --install
+```
+
+### Julia (IJulia)
+
+Install the IJulia package from the Julia REPL:
+
+```julia
+using Pkg; Pkg.add("IJulia")
+```
+
+### Verifying installation
+
+To list all installed kernels:
+
+```bash
+jupyter kernelspec list
+```
+
+For general information on installing and managing kernels, see the [Jupyter documentation](https://docs.jupyter.org/en/latest/install/kernels.html).
+
 ## Kernel selection
 
 When multiple kernels are available for a language, you can specify which kernel to use with a magic comment `<comment>:: kernelname` on the first line. The comment character is automatically detected based on the language:

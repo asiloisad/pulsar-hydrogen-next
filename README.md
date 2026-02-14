@@ -224,11 +224,9 @@ Click on output results to interact with them:
 
 Images opened via Ctrl+Click are displayed in the [image-editor](https://github.com/asiloisad/pulsar-image-editor) package with full editing capabilities (zoom, pan, filters, save-as).
 
-## Service
+## Provided Service `hydrogen.provider`
 
-The package provides a `hydrogen.provider` service for other packages to interact with Jupyter kernels.
-
-### Consuming the Service
+Allows other packages to interact with Jupyter kernels — execute code, get completions, inspect objects, and monitor kernel state.
 
 In your `package.json`:
 
@@ -244,7 +242,7 @@ In your `package.json`:
 }
 ```
 
-In your package:
+In your main module:
 
 ```javascript
 module.exports = {
@@ -260,7 +258,7 @@ module.exports = {
 };
 ```
 
-### HydrogenProvider Methods
+### HydrogenProvider methods
 
 | Method | Description |
 | --- | --- |

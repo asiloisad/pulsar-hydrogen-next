@@ -126,7 +126,7 @@
     "mobx-react": "^9.2.0",
     "natural-compare-lite": "^1.4.0",
     "plotly.js-dist": "^3.3.0",
-    "pulsar-select-list": "^1.2.0",
+    "pulsar-select-list": "^1.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "spawnteract": "^5.0.1",

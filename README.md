@@ -147,7 +147,25 @@ In the hydrogen-next settings, add gateway entries as JSON:
 ]
 ```
 
-Use `Hydrogen: Connect to Remote Kernel` command to select a gateway and kernel.
+Use `Hydrogen: Connect to Remote Kernel` command to select a gateway and kernel. After selecting a gateway, you'll be prompted to choose an authentication method:
+
+- **No credentials** — for servers without authentication
+- **Authenticate with a token** — prompts for the server token
+- **Authenticate with a cookie** — prompts for a cookie value
+
+If you prefer to skip the prompt, you can include the token directly in the gateway config:
+
+```json
+[
+  {
+    "name": "Local Jupyter",
+    "options": {
+      "baseUrl": "http://localhost:8888",
+      "token": "your-server-token-here"
+    }
+  }
+]
+```
 
 ## Code block detection
 

@@ -27,7 +27,7 @@ To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.de
 
 ## Kernel installation
 
-hydrogen-next requires Jupyter kernels to be installed on your system. A kernel is a language-specific backend that executes your code. You can install kernels for many languages — see the [full list of available kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) on the Jupyter wiki.
+hydrogen-next requires Jupyter kernels to be installed on your system. A kernel is a language-specific backend that executes your code. You can install kernels for many languages. See the [full list of available kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) on the Jupyter wiki.
 
 ### Python (IPython)
 
@@ -47,7 +47,7 @@ pip install ipykernel
 python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 ```
 
-The `--name` flag sets the kernel directory name (used in [magic comments](#kernel-selection)), and `--display-name` sets the label shown in the kernel picker. Once registered, the kernel remains available even when the venv is not activated — it points directly to the venv's Python interpreter.
+The `--name` flag sets the kernel directory name (used in [magic comments](#kernel-selection)), and `--display-name` sets the label shown in the kernel picker. Once registered, the kernel remains available even when the venv is not activated, as it points directly to the venv's Python interpreter.
 
 To remove a kernel you no longer need:
 
@@ -149,9 +149,9 @@ In the hydrogen-next settings, add gateway entries as JSON:
 
 Use `Hydrogen: Connect to Remote Kernel` command to select a gateway and kernel. After selecting a gateway, you'll be prompted to choose an authentication method:
 
-- **No credentials** — for servers without authentication
-- **Authenticate with a token** — prompts for the server token
-- **Authenticate with a cookie** — prompts for a cookie value
+- **No credentials**: for servers without authentication
+- **Authenticate with a token**: prompts for the server token
+- **Authenticate with a cookie**: prompts for a cookie value
 
 If you prefer to skip the prompt, you can include the token directly in the gateway config:
 
@@ -244,7 +244,7 @@ Images opened via Ctrl+Click are displayed in the [image-editor](https://github.
 
 ## Provided Service `hydrogen.provider`
 
-Allows other packages to interact with Jupyter kernels — execute code, get completions, inspect objects, and monitor kernel state.
+Allows other packages to interact with Jupyter kernels: execute code, get completions, inspect objects, and monitor kernel state.
 
 In your `package.json`:
 
@@ -392,4 +392,4 @@ shared.unregisterKernel(kernel);
 
 ## Contributing
 
-Got ideas to make this package better, found a bug, or want to help add new features? Just drop your thoughts on GitHub — any feedback's welcome!
+Got ideas to make this package better, found a bug, or want to help add new features? Just drop your thoughts on GitHub. Any feedback is welcome!

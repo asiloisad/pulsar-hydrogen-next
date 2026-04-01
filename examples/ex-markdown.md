@@ -1,6 +1,6 @@
 # Running code inside markdown
 
-Put your cursor inside the following code-block and then run the code using `CTRL+Enter`
+Put your cursor inside the following code-block and then run the code using <kbd>CTRL+Enter</kbd>
 
 ```py
 print("Hello from Python")

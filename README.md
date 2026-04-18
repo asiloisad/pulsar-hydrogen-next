@@ -42,9 +42,12 @@ Commands available in `atom-text-editor:not([mini])`:
 - `hydrogen-next:recalculate-all-above`: clear results, restart kernel, run all above,
 - `hydrogen-next:recalculate-all-inline`: clear results, restart kernel, run all inline,
 - `hydrogen-next:recalculate-all-above-inline`: clear results, restart kernel, run all above inline,
+
 - `hydrogen-next:clear-results`: <kbd>Ctrl+Shift+Backspace</kbd> clear output results,
 - `hydrogen-next:clear-and-restart`: clear results and restart kernel,
 - `hydrogen-next:clear-and-center`: clear results and center cursor,
+- `hydrogen-next:toggle-output-area`: toggle output area mode,
+
 - `hydrogen-next:start-local-kernel`: start a local kernel,
 - `hydrogen-next:connect-to-remote-kernel`: connect to a remote kernel via gateway,
 - `hydrogen-next:connect-to-existing-kernel`: connect to an existing kernel,
@@ -54,31 +57,36 @@ Commands available in `atom-text-editor:not([mini])`:
 - `hydrogen-next:rename-remote-session`: rename remote session,
 - `hydrogen-next:disconnect-remote-session`: disconnect remote session,
 - `hydrogen-next:update-kernels`: refresh available kernels list,
+
 - `hydrogen-next:add-watch`: add watch expression,
 - `hydrogen-next:remove-watch`: remove watch expression,
 - `hydrogen-next:toggle-watches`: toggle watches panel,
 - `hydrogen-next:toggle-variable-explorer`: toggle variable explorer panel,
-- `hydrogen-next:toggle-output-area`: toggle output area mode,
-- `hydrogen-next:export-notebook`: export editor content to `.ipynb`,
+
+- `hydrogen-next:go-to-next-cell`: jump to next cell,
+- `hydrogen-next:go-to-previous-cell`: jump to previous cell,
+- `hydrogen-next:select-cell`: select current cell,
+- `hydrogen-next:select-previous-cell`: extend cell selection up,
+- `hydrogen-next:select-next-cell`: extend cell selection down,
+- `hydrogen-next:move-cell-up`: move cell up,
+- `hydrogen-next:move-cell-down`: move cell down,
 - `hydrogen-next:fold-current-cell`: fold current cell,
 - `hydrogen-next:fold-all-but-current-cell`: fold all cells except current,
-- `hydrogen-next:next-cell`: jump to next cell,
-- `hydrogen-next:previous-cell`: jump to previous cell,
-- `hydrogen-next:select-cell`: select current cell,
-- `hydrogen-next:select-up`: extend cell selection up,
-- `hydrogen-next:select-down`: extend cell selection down,
-- `hydrogen-next:move-cell-up`: move cell up,
-- `hydrogen-next:move-cell-down`: move cell down.
+
+- `hydrogen-next:export-notebook`: export editor content to `.ipynb`.
 
 Commands available in `atom-workspace`:
 
 - `hydrogen-next:import-notebook`: import a `.ipynb` notebook,
 - `hydrogen-next:open-examples`: open example files,
+
+- `hydrogen-next:shutdown-all-kernels`: shutdown all running kernels,
+
 - `hydrogen-next:toggle-kernel-monitor`: toggle kernel monitor panel,
 - `hydrogen-next:toggle-exec-panel`: toggle exec panel,
 - `hydrogen-next:show-inspector`: show inspector pane,
 - `hydrogen-next:hide-inspector`: hide inspector pane,
-- `hydrogen-next:shutdown-all-kernels`: shutdown all running kernels,
+
 - `hydrogen-next:attach-to-claude`: attach code and output to claude-chat,
 - `hydrogen-next:debug-toggle`: toggle debug logging.
 

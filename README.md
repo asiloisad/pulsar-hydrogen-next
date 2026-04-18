@@ -25,6 +25,63 @@ Run code interactively with Jupyter kernels. Supports Python, R, JavaScript, and
 
 To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.dev/packages/hydrogen-next) in the Install pane of the Pulsar settings or run `ppm install hydrogen-next`. Alternatively, you can run `ppm install asiloisad/pulsar-hydrogen-next` to install a package directly from the GitHub repository.
 
+## Commands
+
+Commands available in `atom-text-editor:not([mini])`:
+
+- `hydrogen-next:run`: <kbd>Ctrl+Enter</kbd> run code at cursor,
+- `hydrogen-next:run-and-move-down`: <kbd>Shift+Enter</kbd> run and move to next block,
+- `hydrogen-next:run-cell`: <kbd>Ctrl+Alt+Enter</kbd> run current cell,
+- `hydrogen-next:run-cell-and-move-down`: <kbd>Shift+Alt+Enter</kbd> run cell and move to next,
+- `hydrogen-next:run-all`: <kbd>Ctrl+Shift+Enter</kbd> run all code in editor,
+- `hydrogen-next:run-all-above`: run all code above cursor,
+- `hydrogen-next:run-all-inline`: run all code inline, one statement at a time,
+- `hydrogen-next:run-all-above-inline`: run all code above cursor inline,
+- `hydrogen-next:run-all-below-inline`: run all code below cursor inline,
+- `hydrogen-next:recalculate-all`: clear results, restart kernel, run all,
+- `hydrogen-next:recalculate-all-above`: clear results, restart kernel, run all above,
+- `hydrogen-next:recalculate-all-inline`: clear results, restart kernel, run all inline,
+- `hydrogen-next:recalculate-all-above-inline`: clear results, restart kernel, run all above inline,
+- `hydrogen-next:clear-results`: <kbd>Ctrl+Shift+Backspace</kbd> clear output results,
+- `hydrogen-next:clear-and-restart`: clear results and restart kernel,
+- `hydrogen-next:clear-and-center`: clear results and center cursor,
+- `hydrogen-next:start-local-kernel`: start a local kernel,
+- `hydrogen-next:connect-to-remote-kernel`: connect to a remote kernel via gateway,
+- `hydrogen-next:connect-to-existing-kernel`: connect to an existing kernel,
+- `hydrogen-next:interrupt-kernel`: interrupt running execution,
+- `hydrogen-next:restart-kernel`: restart the kernel,
+- `hydrogen-next:shutdown-kernel`: shutdown the kernel,
+- `hydrogen-next:rename-remote-session`: rename remote session,
+- `hydrogen-next:disconnect-remote-session`: disconnect remote session,
+- `hydrogen-next:update-kernels`: refresh available kernels list,
+- `hydrogen-next:add-watch`: add watch expression,
+- `hydrogen-next:remove-watch`: remove watch expression,
+- `hydrogen-next:toggle-watches`: toggle watches panel,
+- `hydrogen-next:toggle-variable-explorer`: toggle variable explorer panel,
+- `hydrogen-next:toggle-output-area`: toggle output area mode,
+- `hydrogen-next:export-notebook`: export editor content to `.ipynb`,
+- `hydrogen-next:fold-current-cell`: fold current cell,
+- `hydrogen-next:fold-all-but-current-cell`: fold all cells except current,
+- `hydrogen-next:next-cell`: jump to next cell,
+- `hydrogen-next:previous-cell`: jump to previous cell,
+- `hydrogen-next:select-cell`: select current cell,
+- `hydrogen-next:select-up`: extend cell selection up,
+- `hydrogen-next:select-down`: extend cell selection down,
+- `hydrogen-next:move-cell-up`: move cell up,
+- `hydrogen-next:move-cell-down`: move cell down.
+
+Commands available in `atom-workspace`:
+
+- `hydrogen-next:import-notebook`: import a `.ipynb` notebook,
+- `hydrogen-next:open-examples`: open example files,
+- `hydrogen-next:toggle-kernel-monitor`: toggle kernel monitor panel,
+- `hydrogen-next:toggle-exec-panel`: toggle exec panel,
+- `hydrogen-next:show-inspector`: show inspector pane,
+- `hydrogen-next:hide-inspector`: hide inspector pane,
+- `hydrogen-next:shutdown-all-kernels`: shutdown all running kernels,
+- `hydrogen-next:attach-to-claude`: attach code and output to claude-chat,
+- `hydrogen-next:debug-toggle`: toggle debug logging.
+
 ## Kernel installation
 
 hydrogen-next requires Jupyter kernels to be installed on your system. A kernel is a language-specific backend that executes your code. You can install kernels for many languages. See the [full list of available kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) on the Jupyter wiki.

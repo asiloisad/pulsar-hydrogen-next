@@ -20,6 +20,7 @@ Run code interactively with Jupyter kernels. Supports Python, R, JavaScript, and
 - **Navigation panel**: Cell markers via [navigation-panel](https://github.com/asiloisad/pulsar-navigation-panel).
 - **Scrollmap**: Cell markers via [scrollmap](https://github.com/asiloisad/pulsar-scrollmap).
 - **AI integration**: Attach code input and output to [claude-chat](https://github.com/asiloisad/pulsar-claude-chat) for AI-assisted analysis.
+- **Jupyter console launcher**: Open a Jupyter console attached to the active kernel in an embedded [terminal](https://github.com/pulsar-edit/terminal) pane or a system terminal via [terminal-spawn](https://github.com/asiloisad/pulsar-terminal-spawn).
 
 ## Installation
 
@@ -88,7 +89,11 @@ Commands available in `atom-workspace`:
 - `hydrogen-next:hide-inspector`: hide inspector pane,
 
 - `hydrogen-next:attach-to-claude`: attach code and output to claude-chat,
-- `hydrogen-next:debug-toggle`: toggle debug logging.
+- `hydrogen-next:debug-toggle`: toggle debug logging,
+
+- `hydrogen-next:open-jupyter-console`: open Jupyter console attached to active kernel in an embedded terminal pane,
+- `hydrogen-next:spawn-jupyter-console`: spawn Jupyter console attached to active kernel in a system terminal,
+- `hydrogen-next:copy-jupyter-console-command`: copy the Jupyter console command to clipboard.
 
 ## Kernel installation
 
@@ -306,6 +311,24 @@ Click on output results to interact with them:
 | **Ctrl+Click** (Cmd+Click on macOS) | Open in editor (images open in image-editor) |
 
 Images opened via Ctrl+Click are displayed in the [image-editor](https://github.com/asiloisad/pulsar-image-editor) package with full editing capabilities (zoom, pan, filters, save-as).
+
+## Jupyter console launcher
+
+Attach a standalone Jupyter console to the active kernel via its connection file. The same kernel that runs your inline code is reused, so variables and state are shared between the console and the editor.
+
+Three commands are available:
+
+- `hydrogen-next:open-jupyter-console`: runs the console in an embedded [terminal](https://github.com/pulsar-edit/terminal) pane inside Pulsar (requires the `terminal` package),
+- `hydrogen-next:spawn-jupyter-console`: opens the system terminal and runs the console there (requires the [terminal-spawn](https://github.com/asiloisad/pulsar-terminal-spawn) package),
+- `hydrogen-next:copy-jupyter-console-command`: copies the resolved command to the clipboard so you can paste it anywhere (e.g. an SSH session).
+
+Only local kernels are supported (remote kernels have no connection file).
+
+The command template is configurable via the `Jupyter console command` setting. Use `{connection-file}` as a placeholder for the active kernel's connection file path. Examples:
+
+- `jupyter console --existing {connection-file}` (default),
+- `jupyter qtconsole --existing {connection-file}`,
+- `ssh remote 'jupyter console --existing {connection-file}'`.
 
 ## Provided Service `hydrogen.provider`
 

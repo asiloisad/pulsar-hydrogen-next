@@ -33,6 +33,18 @@
           command: 'hydrogen-next:shutdown-all-kernels'
         }
         {
+          label: 'Open Jupyter Console'
+          command: 'hydrogen-next:open-jupyter-console'
+        }
+        {
+          label: 'Spawn Jupyter Console'
+          command: 'hydrogen-next:spawn-jupyter-console'
+        }
+        {
+          label: 'Copy Jupyter Console Command'
+          command: 'hydrogen-next:copy-jupyter-console-command'
+        }
+        {
           label: 'Toggle Kernel Monitor'
           command: 'hydrogen-next:toggle-kernel-monitor'
         }

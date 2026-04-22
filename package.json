@@ -72,7 +72,10 @@
       "hydrogen-next:open-examples",
       "hydrogen-next:shutdown-all-kernels",
       "hydrogen-next:show-inspector",
-      "hydrogen-next:hide-inspector"
+      "hydrogen-next:hide-inspector",
+      "hydrogen-next:open-jupyter-console",
+      "hydrogen-next:spawn-jupyter-console",
+      "hydrogen-next:copy-jupyter-console-command"
     ]
   },
   "consumedServices": {
@@ -94,6 +97,16 @@
     "image-editor": {
       "versions": {
         "1.0.0": "consumeImageEditor"
+      }
+    },
+    "terminal": {
+      "versions": {
+        "2.0.0": "consumeTerminal"
+      }
+    },
+    "terminal-spawn": {
+      "versions": {
+        "^1.0.0": "consumeTerminalSpawn"
       }
     }
   },

@@ -16,6 +16,6 @@ print(f"Memory is shared between cells: a={a}")
 Another grammar & kernel can be used.
 
 ```js
-console.log("Hello from JS")
-console.log(`Memory do not share between kernels: a=${a}`)
+console.log("Hello from JS");
+console.log(`Memory do not share between kernels: a=${a}`);
 ```

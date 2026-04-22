@@ -60,7 +60,10 @@
       "hydrogen-next:select-previous-cell",
       "hydrogen-next:select-next-cell",
       "hydrogen-next:move-cell-up",
-      "hydrogen-next:move-cell-down"
+      "hydrogen-next:move-cell-down",
+      "hydrogen-next:open-jupyter-console",
+      "hydrogen-next:spawn-jupyter-console",
+      "hydrogen-next:copy-jupyter-console-command"
     ],
     "atom-workspace": [
       "hydrogen-next:import-notebook",
@@ -72,10 +75,7 @@
       "hydrogen-next:open-examples",
       "hydrogen-next:shutdown-all-kernels",
       "hydrogen-next:show-inspector",
-      "hydrogen-next:hide-inspector",
-      "hydrogen-next:open-jupyter-console",
-      "hydrogen-next:spawn-jupyter-console",
-      "hydrogen-next:copy-jupyter-console-command"
+      "hydrogen-next:hide-inspector"
     ]
   },
   "consumedServices": {

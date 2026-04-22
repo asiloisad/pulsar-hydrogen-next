@@ -251,23 +251,23 @@ When you run code without a selection, hydrogen-next intelligently detects what 
 
 ### Python support
 
-| Cursor Position | What Gets Executed |
-| --- | --- |
-| On `def`/`class` line | Entire function/class (with decorators) |
-| On `@decorator` line | Decorated function/class |
-| On `if`/`elif`/`else` line | Entire if-elif-else chain |
-| On `try`/`except`/`finally` line | Entire try block |
-| On `for`/`while` line | Loop with optional `else` |
-| On `with`/`match` line | Entire block |
-| **Inside body** | **Single line only** |
+| Cursor Position                  | What Gets Executed                      |
+| -------------------------------- | --------------------------------------- |
+| On `def`/`class` line            | Entire function/class (with decorators) |
+| On `@decorator` line             | Decorated function/class                |
+| On `if`/`elif`/`else` line       | Entire if-elif-else chain               |
+| On `try`/`except`/`finally` line | Entire try block                        |
+| On `for`/`while` line            | Loop with optional `else`               |
+| On `with`/`match` line           | Entire block                            |
+| **Inside body**                  | **Single line only**                    |
 
 ### Bracket expressions
 
-| Cursor Position | What Gets Executed |
-| --- | --- |
-| On line ending with `[`, `(`, `{` | Entire bracket block |
+| Cursor Position                     | What Gets Executed   |
+| ----------------------------------- | -------------------- |
+| On line ending with `[`, `(`, `{`   | Entire bracket block |
 | On line starting with `]`, `)`, `}` | Entire bracket block |
-| **Inside bracket block** | **Single line only** |
+| **Inside bracket block**            | **Single line only** |
 
 ### Examples
 
@@ -305,9 +305,9 @@ This allows you to execute entire blocks from control lines, while still being a
 
 Click on output results to interact with them:
 
-| Action | Effect |
-| --- | --- |
-| **Click** | Copy to clipboard (image or text) |
+| Action                              | Effect                                       |
+| ----------------------------------- | -------------------------------------------- |
+| **Click**                           | Copy to clipboard (image or text)            |
 | **Ctrl+Click** (Cmd+Click on macOS) | Open in editor (images open in image-editor) |
 
 Images opened via Ctrl+Click are displayed in the [image-editor](https://github.com/asiloisad/pulsar-image-editor) package with full editing capabilities (zoom, pan, filters, save-as).
@@ -360,61 +360,61 @@ module.exports = {
     const kernel = this.hydrogen.getActiveKernel();
     const result = await kernel.execute("print('Hello')");
     console.log(result.status); // 'ok' or 'error'
-  }
+  },
 };
 ```
 
 ### HydrogenProvider methods
 
-| Method | Description |
-| --- | --- |
-| `getActiveKernel()` | Get the kernel for the active editor |
-| `onDidChangeKernel(callback)` | Subscribe to kernel changes |
-| `getCellRange(editor)` | Get the current cell range |
+| Method                        | Description                          |
+| ----------------------------- | ------------------------------------ |
+| `getActiveKernel()`           | Get the kernel for the active editor |
+| `onDidChangeKernel(callback)` | Subscribe to kernel changes          |
+| `getCellRange(editor)`        | Get the current cell range           |
 
 ### HydrogenKernel API
 
 #### Execution
 
-| Method | Description |
-| --- | --- |
-| `execute(code)` | Execute code, returns `Promise<{status, outputs, error}>` |
-| `executeWithCallback(code, callback)` | Execute with streaming callback |
+| Method                                | Description                                               |
+| ------------------------------------- | --------------------------------------------------------- |
+| `execute(code)`                       | Execute code, returns `Promise<{status, outputs, error}>` |
+| `executeWithCallback(code, callback)` | Execute with streaming callback                           |
 
 #### State & Control
 
-| Property/Method | Description |
-| --- | --- |
-| `executionState` | Current state: `'idle'`, `'busy'`, `'starting'` |
-| `executionCount` | Current execution count |
-| `lastExecutionTime` | Last execution time string (e.g., `"1.23s"`) |
+| Property/Method                       | Description                                      |
+| ------------------------------------- | ------------------------------------------------ |
+| `executionState`                      | Current state: `'idle'`, `'busy'`, `'starting'`  |
+| `executionCount`                      | Current execution count                          |
+| `lastExecutionTime`                   | Last execution time string (e.g., `"1.23s"`)     |
 | `onDidChangeExecutionState(callback)` | Subscribe to state changes, returns `Disposable` |
-| `interrupt()` | Interrupt running execution |
-| `restart([callback])` | Restart the kernel |
-| `shutdown()` | Shutdown the kernel |
+| `interrupt()`                         | Interrupt running execution                      |
+| `restart([callback])`                 | Restart the kernel                               |
+| `shutdown()`                          | Shutdown the kernel                              |
 
 #### Introspection
 
-| Method | Description |
-| --- | --- |
-| `complete(code)` | Get completions, returns `Promise<{matches, ...}>` |
+| Method                     | Description                                         |
+| -------------------------- | --------------------------------------------------- |
+| `complete(code)`           | Get completions, returns `Promise<{matches, ...}>`  |
 | `inspect(code, cursorPos)` | Get documentation, returns `Promise<{data, found}>` |
 
 #### Kernel info
 
-| Property/Method | Description |
-| --- | --- |
-| `language` | Kernel language (e.g., `"python"`) |
-| `displayName` | Kernel display name (e.g., `"Python 3"`) |
-| `kernelSpec` | Full kernel spec object |
-| `getConnectionFile()` | Path to kernel connection file |
+| Property/Method       | Description                              |
+| --------------------- | ---------------------------------------- |
+| `language`            | Kernel language (e.g., `"python"`)       |
+| `displayName`         | Kernel display name (e.g., `"Python 3"`) |
+| `kernelSpec`          | Full kernel spec object                  |
+| `getConnectionFile()` | Path to kernel connection file           |
 
 #### Events & Middleware
 
-| Method | Description |
-| --- | --- |
-| `onDidDestroy(callback)` | Called when kernel is destroyed |
-| `addMiddleware(middleware)` | Add execution middleware |
+| Method                      | Description                     |
+| --------------------------- | ------------------------------- |
+| `onDidDestroy(callback)`    | Called when kernel is destroyed |
+| `addMiddleware(middleware)` | Add execution middleware        |
 
 ### Example: Execute and Handle Results
 
@@ -454,8 +454,8 @@ hydrogen-next exposes a shared module that allows dependent packages (like jupyt
 External packages can register their kernels with hydrogen-next, making them visible to tools like Variable Explorer, Kernel Monitor, and Inspector:
 
 ```javascript
-const hydrogen = atom.packages.getLoadedPackage('hydrogen-next');
-const shared = require(path.join(hydrogen.path, 'lib', 'shared'));
+const hydrogen = atom.packages.getLoadedPackage("hydrogen-next");
+const shared = require(path.join(hydrogen.path, "lib", "shared"));
 
 // Register a kernel
 shared.registerKernel(kernel, filePath, editor, grammar);
@@ -469,14 +469,14 @@ shared.unregisterKernel(kernel);
 
 ### Available Exports
 
-| Category | Exports |
-| --- | --- |
-| **Kernel** | `KernelManager`, `registerKernel`, `unregisterKernel`, `setCurrentKernel`, `getStore` |
-| **Output Rendering** | `Display`, `Output`, `RichMedia`, `StreamText`, `KernelOutputError` |
-| **Output Utilities** | `reduceOutputs`, `normalizeOutput`, `getBestMimeType`, `truncateOutput` |
-| **ANSI Handling** | `AnsiText`, `escapeCarriageReturn` |
-| **Timing** | `formatExecutionTime`, `createExecutionTimeTracker` |
-| **Utilities** | `kernelSpecProvidesGrammar`, `tildify`, `sanitizeHtml` |
+| Category             | Exports                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------- |
+| **Kernel**           | `KernelManager`, `registerKernel`, `unregisterKernel`, `setCurrentKernel`, `getStore` |
+| **Output Rendering** | `Display`, `Output`, `RichMedia`, `StreamText`, `KernelOutputError`                   |
+| **Output Utilities** | `reduceOutputs`, `normalizeOutput`, `getBestMimeType`, `truncateOutput`               |
+| **ANSI Handling**    | `AnsiText`, `escapeCarriageReturn`                                                    |
+| **Timing**           | `formatExecutionTime`, `createExecutionTimeTracker`                                   |
+| **Utilities**        | `kernelSpecProvidesGrammar`, `tildify`, `sanitizeHtml`                                |
 
 ## Contributing
 

@@ -3,14 +3,15 @@
 
 // -------------- Colors ------------------
 
-@hydrogen-light-background: fadein(lighten(@syntax-background-color, 40%),
-    100%);
+@hydrogen-light-background: fadein(lighten(@syntax-background-color, 40%), 100%);
 @hydrogen-dark-background: fadein(lighten(@syntax-background-color, 10%), 100%);
 
-@hydrogen-inline-background: contrast(@syntax-text-color,
-    @hydrogen-dark-background,
-    @hydrogen-light-background,
-    20%);
+@hydrogen-inline-background: contrast(
+  @syntax-text-color,
+  @hydrogen-dark-background,
+  @hydrogen-light-background,
+  20%
+);
 @hydrogen-inline-color: lighten(@syntax-text-color, 10%);
 @hydrogen-error-color: average(@syntax-text-color, red);
 
@@ -21,7 +22,6 @@
 }
 
 .hydrogen-next {
-
   // -------------- Globals -----------------
 
   code,
@@ -188,7 +188,6 @@
     border: solid 1px @base-border-color;
 
     &[hydrogen-wrapoutput="true"] {
-
       code,
       pre {
         white-space: pre-wrap;
@@ -232,7 +231,7 @@
     flex-direction: column;
   }
 
-  .multiline-container .toolbar> :not(:first-child) {
+  .multiline-container .toolbar > :not(:first-child) {
     border-top: solid 1px @base-border-color;
   }
 
@@ -255,7 +254,7 @@
     padding: 0 0.5em 0 0.5em;
   }
 
-  .spinner>div {
+  .spinner > div {
     background-color: @hydrogen-inline-color;
     height: 100%;
     width: 2px;
@@ -285,7 +284,6 @@
   }
 
   @keyframes stretchdelay {
-
     0%,
     40%,
     100% {
@@ -416,7 +414,7 @@
     .kernel-monitor-table {
       width: 100%;
 
-      >thead {
+      > thead {
         position: sticky;
         top: 0;
         z-index: 3;
@@ -425,7 +423,8 @@
 
       border: unset;
 
-      th, td {
+      th,
+      td {
         padding: 0.3em 0.5em;
         border: 1px solid @base-border-color;
         border-top: 1px;
@@ -635,7 +634,7 @@
       .variable-table {
         width: 100%;
 
-        >thead {
+        > thead {
           position: sticky;
           top: 0;
           z-index: 3t;
@@ -644,7 +643,8 @@
 
         border: unset;
 
-        th, td {
+        th,
+        td {
           padding: 0.3em 0.5em;
           border: 1px solid @base-border-color;
           border-top: 1px;
@@ -679,9 +679,7 @@
     padding: 0.5em 0;
     font-size: 0.9em;
   }
-
 }
-
 
 .hydrogen-next code,
 .hydrogen-next pre {
@@ -695,7 +693,7 @@
 }
 
 .line.hydrogen-next-breakpoint::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 1px;

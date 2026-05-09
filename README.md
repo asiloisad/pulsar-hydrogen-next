@@ -195,8 +195,14 @@ If `gateways.cson` does not exist yet, hydrogen-next creates it automatically. E
 
 Example of local jupyter server:
 
+The `jupyter-server` package is required. Install it in the environment you want to use for the server:
+
 ```bash
-jupyter server --ServerApp.token='test123'
+pip install jupyter-server
+```
+
+```bash
+jupyter server --IdentityProvider.token='test123'
 ```
 
 In `gateways.cson`, add gateway entries as an array:
@@ -204,30 +210,30 @@ In `gateways.cson`, add gateway entries as an array:
 ```cson
 [
   {
-    "name": "Local Jupyter",
-    "options": {
-      "baseUrl": "http://localhost:8888"
-    }
+    name: "Local Jupyter"
+    options:
+      baseUrl: "http://localhost:8888"
+      token: "test123"
   }
 ]
 ```
 
-Use the `Hydrogen Next: Connect to Remote Kernel` command (`hydrogen-next:connect-to-remote-kernel`) to select a gateway and kernel. After selecting a gateway, you'll be prompted to choose an authentication method:
+Use the `Hydrogen Next: Connect to Remote Kernel` command (`hydrogen-next:connect-to-remote-kernel`) to select a gateway and kernel.
+
+If `token` is configured, hydrogen-next uses it automatically and does not prompt for authentication. Without a configured token, after selecting a gateway you'll be prompted to choose an authentication method:
 
 - **No credentials**: for servers without authentication
 - **Authenticate with a token**: prompts for the server token
 - **Authenticate with a cookie**: prompts for a cookie value
 
-If you prefer to skip the prompt, you can include the token directly in the gateway config:
+If your server was started without a token, omit `token` and choose **No credentials** when prompted:
 
 ```cson
 [
   {
-    "name": "Local Jupyter",
-    "options": {
-      "baseUrl": "http://localhost:8888",
-      "token": "your-server-token-here"
-    }
+    name: "Local Jupyter"
+    options:
+      baseUrl: "http://localhost:8888"
   }
 ]
 ```

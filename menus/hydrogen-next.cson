@@ -13,6 +13,10 @@
           command: 'hydrogen-next:connect-to-remote-kernel'
         }
         {
+          label: 'Open Gateways Config'
+          command: 'hydrogen-next:open-gateways'
+        }
+        {
           label: 'Connect to Existing Kernel'
           command: 'hydrogen-next:connect-to-existing-kernel'
         }

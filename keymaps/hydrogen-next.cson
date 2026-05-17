@@ -1,16 +1,8 @@
-'.platform-win32 atom-text-editor:not([mini]),
- .platform-linux atom-text-editor:not([mini])':
-  'ctrl-enter': 'hydrogen-next:run'
+'atom-text-editor:not([mini])':
+  'cmdorctrl-enter': 'hydrogen-next:run'
   'shift-enter': 'hydrogen-next:run-and-move-down'
-  'ctrl-alt-enter': 'hydrogen-next:run-cell'
+  'cmdorctrl-alt-enter': 'hydrogen-next:run-cell'
   'shift-alt-enter': 'hydrogen-next:run-cell-and-move-down'
-  'ctrl-shift-enter': 'hydrogen-next:run-all'
+  'cmdorctrl-shift-enter': 'hydrogen-next:run-all'
   'ctrl-shift-backspace': 'hydrogen-next:clear-results'
-
-'.platform-darwin atom-text-editor:not([mini])':
-  'cmd-enter': 'hydrogen-next:run'
-  'shift-enter': 'hydrogen-next:run-and-move-down'
-  'cmd-alt-enter': 'hydrogen-next:run-cell'
-  'shift-alt-enter': 'hydrogen-next:run-cell-and-move-down'
-  'cmd-shift-enter': 'hydrogen-next:run-all'
-  'cmd-alt-backspace': 'hydrogen-next:clear-results'
+  'cmdorctrl-alt-backspace': 'hydrogen-next:clear-results'

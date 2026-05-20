@@ -163,10 +163,8 @@
 
 'context-menu':
   '.tree-view .file .name[data-name$=\\.ipynb]': [
-    {type: 'separator'}
     {
       label: 'Import Notebook'
       command: 'hydrogen-next:import-notebook'
     }
-    {type: 'separator'}
   ]

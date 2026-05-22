@@ -19,6 +19,7 @@ Run code interactively with Jupyter kernels. Supports Python, R, JavaScript, and
 - **Custom connections**: Connect to remote kernels (e.g., Docker).
 - **Navigation panel**: Cell markers via [navigation-panel](https://github.com/asiloisad/pulsar-navigation-panel).
 - **Scrollmap**: Cell markers via [scrollmap](https://github.com/asiloisad/pulsar-scrollmap).
+- **Jupyter notebook support**: When [jupyter-next](https://github.com/asiloisad/pulsar-jupyter-next) is installed, the same run/interrupt/restart/shutdown commands also drive cells in `.ipynb` notebooks via the `hydrogen-adapter` service. Output, execution count, and timing are routed back to each notebook cell.
 - **AI integration**: Attach code input and output to [claude-chat](https://github.com/asiloisad/pulsar-claude-chat) for AI-assisted analysis.
 - **Jupyter console launcher**: Open a Jupyter console attached to the active kernel in an embedded [terminal](https://github.com/pulsar-edit/terminal) pane or a system terminal via [terminal-spawn](https://github.com/asiloisad/pulsar-terminal-spawn).
 

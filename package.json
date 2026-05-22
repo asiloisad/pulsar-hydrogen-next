@@ -22,6 +22,9 @@
     "atom": ">=1.132.0 <2.0.0"
   },
   "main": "./lib/main",
+  "activationHooks": [
+    "hydrogen-adapter:item-used"
+  ],
   "activationCommands": {
     "atom-text-editor:not([mini])": [
       "hydrogen-next:run",
@@ -64,19 +67,6 @@
       "hydrogen-next:open-jupyter-console",
       "hydrogen-next:spawn-jupyter-console",
       "hydrogen-next:copy-jupyter-console-command"
-    ],
-    ".jupyter-notebook": [
-      "hydrogen-next:run",
-      "hydrogen-next:run-all",
-      "hydrogen-next:run-all-above",
-      "hydrogen-next:run-and-move-down",
-      "hydrogen-next:run-cell",
-      "hydrogen-next:run-cell-and-move-down",
-      "hydrogen-next:run-all-below-inline",
-      "hydrogen-next:clear-results",
-      "hydrogen-next:interrupt-kernel",
-      "hydrogen-next:restart-kernel",
-      "hydrogen-next:shutdown-kernel"
     ],
     "atom-workspace": [
       "hydrogen-next:import-notebook",

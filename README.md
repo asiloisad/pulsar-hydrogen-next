@@ -31,11 +31,11 @@ To install `hydrogen-next` search for [hydrogen-next](https://web.pulsar-edit.de
 
 Commands available in `atom-text-editor:not([mini])`:
 
-- `hydrogen-next:run`: <kbd>Cmd/Ctrl+Enter</kbd> run code at cursor,
-- `hydrogen-next:run-and-move-down`: <kbd>Shift+Enter</kbd> run and move to next block,
-- `hydrogen-next:run-cell`: <kbd>Cmd/Ctrl+Alt+Enter</kbd> run current cell,
-- `hydrogen-next:run-cell-and-move-down`: <kbd>Shift+Alt+Enter</kbd> run cell and move to next,
-- `hydrogen-next:run-all`: <kbd>Cmd/Ctrl+Shift+Enter</kbd> run all code in editor,
+- `hydrogen-next:run`: run code at cursor,
+- `hydrogen-next:run-and-move-down`: run and move to next block,
+- `hydrogen-next:run-cell`: run current cell,
+- `hydrogen-next:run-cell-and-move-down`: run cell and move to next,
+- `hydrogen-next:run-all`: run all code in editor,
 - `hydrogen-next:run-all-above`: run all code above cursor,
 - `hydrogen-next:run-all-inline`: run all code inline, one statement at a time,
 - `hydrogen-next:run-all-above-inline`: run all code above cursor inline,
@@ -44,7 +44,7 @@ Commands available in `atom-text-editor:not([mini])`:
 - `hydrogen-next:recalculate-all-above`: clear results, restart kernel, run all above,
 - `hydrogen-next:recalculate-all-inline`: clear results, restart kernel, run all inline,
 - `hydrogen-next:recalculate-all-above-inline`: clear results, restart kernel, run all above inline,
-- `hydrogen-next:clear-results`: <kbd>Ctrl+Shift+Backspace</kbd> or <kbd>Cmd/Ctrl+Alt+Backspace</kbd> clear output results,
+- `hydrogen-next:clear-results`: clear output results,
 - `hydrogen-next:clear-and-restart`: clear results and restart kernel,
 - `hydrogen-next:clear-and-center`: clear results and center cursor,
 - `hydrogen-next:toggle-output-area`: toggle output area mode,

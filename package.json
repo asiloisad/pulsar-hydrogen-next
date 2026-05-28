@@ -16,7 +16,7 @@
     "plot",
     "image"
   ],
-  "version": "4.10.3",
+  "version": "4.11.0",
   "license": "MIT",
   "engines": {
     "atom": ">=1.132.0 <2.0.0"

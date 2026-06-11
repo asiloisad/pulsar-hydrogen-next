@@ -6,3 +6,6 @@
   'cmdorctrl-shift-enter': 'hydrogen-next:run-all'
   'ctrl-shift-backspace': 'hydrogen-next:clear-results'
   'cmdorctrl-alt-backspace': 'hydrogen-next:clear-results'
+
+'.hydrogen-next.kernel-picker atom-text-editor[mini]':
+  'ctrl-enter': 'select-list:kernel'

@@ -1,4 +1,4 @@
-'atom-text-editor:not([mini])':
+'atom-workspace atom-text-editor:not([mini])':
   'cmdorctrl-enter': 'hydrogen-next:run'
   'shift-enter': 'hydrogen-next:run-and-move-down'
   'cmdorctrl-alt-enter': 'hydrogen-next:run-cell'

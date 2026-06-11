@@ -252,6 +252,11 @@
 
   .spinner {
     padding: 0 0.5em 0 0.5em;
+    // The bars below are sized with height:100%, so the spinner needs an
+    // explicit height. It no longer inherits one from the editor line-height
+    // now that the inline box uses a compact line-height and opts out of the
+    // flex stretch.
+    height: 1.2em;
   }
 
   .spinner > div {

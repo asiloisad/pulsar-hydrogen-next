@@ -88,6 +88,25 @@ Commands available in `atom-workspace`:
 - `hydrogen-next:spawn-jupyter-console`: spawn Jupyter console attached to active kernel in a system terminal,
 - `hydrogen-next:copy-jupyter-console-command`: copy the Jupyter console command to clipboard.
 
+## Editor kernel class
+
+While a file has a running kernel, hydrogen-next adds the `hydrogen-kernel` class to its `atom-text-editor` element. The class is added when the kernel starts, removed when it shuts down, and follows the file when it is saved or reopened. This lets you scope keymaps and styles to editors that actually have a live kernel.
+
+For example, bind <kbd>Ctrl+Enter</kbd> to run code only when a kernel is running, in your `keymap.cson`:
+
+```cson
+'atom-text-editor.hydrogen-kernel:not([mini])':
+  'ctrl-enter': 'hydrogen-next:run'
+```
+
+Or highlight such editors in your `styles.less`:
+
+```less
+atom-text-editor.hydrogen-kernel {
+  border-left: 2px solid limegreen;
+}
+```
+
 ## Kernel installation
 
 hydrogen-next requires Jupyter kernels to be installed on your system. A kernel is a language-specific backend that executes your code. You can install kernels for many languages. See the [full list of available kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) on the Jupyter wiki.

@@ -58,7 +58,7 @@ Commands available in `atom-text-editor:not([mini])`:
 - `hydrogen-next:disconnect-remote-session`: disconnect remote session,
 - `hydrogen-next:update-kernels`: refresh available kernels list,
 - `hydrogen-next:add-watch`: add watch expression,
-- `hydrogen-next:remove-watch`: remove watch expression,
+- `hydrogen-next:remove-watch`: remove focused watch expression when focus is in a watch editor,
 - `hydrogen-next:toggle-watches`: toggle watches panel,
 - `hydrogen-next:toggle-variable-explorer`: toggle variable explorer panel,
 - `hydrogen-next:go-to-next-cell`: jump to next cell,

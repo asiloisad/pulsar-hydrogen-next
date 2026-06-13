@@ -339,23 +339,22 @@
     flex-direction: column;
 
     .slider {
-      .btn-xs.icon {
-        position: absolute;
+      padding: (@component-padding / 2);
 
-        &.icon-chevron-left {
-          left: @component-padding;
-        }
-
-        &.icon-chevron-right {
-          right: @component-padding;
-        }
-      }
-
+      // Prev / counter / next on one row: buttons at the edges, counter centered.
       .current-output {
-        text-align: center;
+        display: flex;
+        align-items: center;
+        gap: @component-padding;
+
+        > span:not(.btn) {
+          flex: 1;
+          text-align: center;
+        }
       }
 
       .input-range {
+        width: 100%;
         cursor: pointer;
 
         &::-webkit-slider-thumb {
@@ -396,10 +395,19 @@
     }
 
     .scroll-list {
+      // Fill the panel from the start; scroll when results overflow.
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
       flex-direction: column;
 
       .scroll-list-item {
-        margin: 10px 0;
+        padding: 10px 0;
+
+        // Horizontal divider between consecutive results.
+        & + .scroll-list-item {
+          border-top: 1px solid @base-border-color;
+        }
       }
 
       .cell_display {
@@ -487,59 +495,48 @@
       .watch-toolbar {
         display: flex;
         background-color: @tool-panel-background-color;
-        border-bottom: 1px solid @base-border-color;
         padding: 4px;
         gap: 4px;
 
+        // Standard styleguide buttons; let the theme own hover/active/disabled.
         .btn {
           flex-shrink: 0;
-          border-radius: 3px;
-
-          &:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-          }
         }
 
-        .watch-run-btn {
-          &:not(:disabled):hover {
-            background-color: @background-color-success;
-            color: @text-color;
-          }
-        }
-
-        .watch-pause-btn {
-          &:not(:disabled):hover {
-            background-color: @background-color-warning;
-            color: @text-color;
-          }
-        }
-
-        .watch-clear-btn {
-          &:hover {
-            background-color: @background-color-info;
-            color: @text-color;
-          }
-        }
-
+        // Push the remove button to the trailing edge of the toolbar.
         .watch-remove-btn {
           margin-left: auto;
-
-          &:hover {
-            background-color: @background-color-error;
-            color: @text-color;
-          }
         }
       }
 
       .watch-editor-container {
+        padding: (@component-padding / 2);
+
+        // Bordered, rounded input that accents on focus, matching the
+        // claude-chat commit/prompt editor.
         .watch-input {
-          padding: 3px;
+          padding: (@component-padding / 2);
           font-size: @font-size;
           min-height: 2.5em;
-          border: none;
+          border: 1px solid @base-border-color;
+          border-radius: @component-border-radius;
           background-color: @syntax-background-color;
+          transition: border-color 0.15s ease;
+
+          &.is-focused {
+            border-color: @text-color-info;
+          }
+
+          .cursor-line {
+            background: transparent;
+          }
         }
+      }
+
+      .history .multiline-container {
+        border-right: 0;
+        border-bottom: 0;
+        border-left: 0;
       }
     }
 

@@ -608,8 +608,15 @@
     .variable-explorer-controls {
       flex: 0 0 auto;
 
-      .filter-container atom-text-editor {
-        font-size: @font-size;
+      .filter-container {
+        .filter-editor,
+        atom-text-editor {
+          width: 100%;
+        }
+
+        atom-text-editor {
+          font-size: @font-size;
+        }
       }
 
       .btn-group {

@@ -9,3 +9,4 @@
 
 '.hydrogen-next.kernel-picker atom-text-editor[mini]':
   'ctrl-enter': 'select-list:kernel'
+  'f5': 'hydrogen-next:update-kernels'

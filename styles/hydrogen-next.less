@@ -746,6 +746,27 @@
           flex: 0 0 auto;
           margin-left: auto;
         }
+
+        .data-explorer-object-meta {
+          flex: 1 1 auto;
+          display: flex;
+          align-items: baseline;
+          gap: 8px;
+          min-width: 180px;
+
+          .data-explorer-object-type {
+            color: @text-color-info;
+            white-space: nowrap;
+          }
+
+          .data-explorer-object-repr {
+            color: @text-color-subtle;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            min-width: 0;
+          }
+        }
       }
 
       .data-explorer-view-toggle {

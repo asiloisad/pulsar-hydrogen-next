@@ -1,3 +1,5 @@
+@accent-color: hsl(220, 100%, 60%);
+
 @import "ui-variables";
 @import "syntax-variables";
 
@@ -518,6 +520,8 @@
           padding: (@component-padding / 2);
           font-size: @font-size;
           min-height: 2.5em;
+          max-height: 10em;
+          overflow-y: auto;
           border: 1px solid @base-border-color;
           border-radius: @component-border-radius;
           background-color: @syntax-background-color;
@@ -677,6 +681,328 @@
           color: @text-color-subtle;
         }
       }
+    }
+  }
+
+  .data-explorer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 8px;
+    box-sizing: border-box;
+
+    .data-explorer-controls {
+      flex: 0 0 auto;
+      padding-bottom: 6px;
+
+      .data-explorer-expression {
+        display: flex;
+        gap: 4px;
+        align-items: flex-start;
+
+        .data-explorer-expression-editor {
+          flex: 1 1 auto;
+          min-width: 0;
+
+          // Bordered, rounded input that accents on focus, matching the watch editor.
+          .data-explorer-expression {
+            padding: (@component-padding / 2);
+            font-size: @font-size;
+            min-height: 2.5em;
+            max-height: 10em;
+            overflow-y: auto;
+            border: 1px solid @base-border-color;
+            border-radius: @component-border-radius;
+            background-color: @syntax-background-color;
+            transition: border-color 0.15s ease;
+
+            &.is-focused {
+              border-color: @accent-color;
+            }
+
+            .cursor-line {
+              background: transparent;
+            }
+          }
+        }
+
+        .btn {
+          flex: 0 0 auto;
+        }
+      }
+
+      // Plot-type toolbar and axis controls share a single horizontal line.
+      .data-explorer-toolbar-row {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 10px;
+        margin-top: 6px;
+        overflow-x: auto;
+
+        // Reload button pinned to the right edge of the row.
+        .data-explorer-reload {
+          flex: 0 0 auto;
+          margin-left: auto;
+        }
+      }
+
+      .data-explorer-view-toggle {
+        flex: 0 0 auto;
+      }
+
+      // Plot axis controls, kept to a single row.
+      .data-explorer-plot-controls {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 10px;
+
+        // Each control is fully inline: label, −/+ buttons, then the dropdown.
+        .data-explorer-control {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          flex: 0 0 auto;
+          gap: 6px;
+
+          > span {
+            color: @text-color-subtle;
+            font-size: 0.9em;
+          }
+
+          // −/+ buttons and the dropdown joined into one group with shared
+          // borders and only the outer corners rounded.
+          .data-explorer-axis-group {
+            display: inline-flex;
+            align-items: stretch;
+
+            .btn,
+            .input-select {
+              border-radius: 0;
+            }
+
+            > * + * {
+              margin-left: -1px;
+            }
+
+            > :first-child {
+              border-top-left-radius: @component-border-radius;
+              border-bottom-left-radius: @component-border-radius;
+            }
+
+            > :last-child {
+              border-top-right-radius: @component-border-radius;
+              border-bottom-right-radius: @component-border-radius;
+            }
+
+            // Keep the focused/hovered element's border above its neighbours.
+            .btn:hover,
+            .btn:focus,
+            .input-select:focus {
+              position: relative;
+              z-index: 1;
+            }
+          }
+        }
+
+        .data-explorer-ycol-list {
+          display: flex;
+          flex-wrap: nowrap;
+          gap: 4px 10px;
+
+          .input-label {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+          }
+        }
+      }
+    }
+
+    .data-explorer-body {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    // Grid stays mounted so switching views doesn't rebuild it; hidden when
+    // another view is active.
+    .data-explorer-grid-view {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+
+      &.is-hidden {
+        display: none;
+      }
+    }
+
+    .data-explorer-message {
+      flex: 0 0 auto;
+      padding: 1em 0.5em;
+      text-align: center;
+      color: @text-color-subtle;
+
+      > div {
+        margin-bottom: 0.25em;
+      }
+    }
+
+    // Canvas-rendered grid. The whole grid is one <canvas> on its own
+    // compositing layer, so focusing/blurring the pane can't trigger the
+    // cell-by-cell re-raster a sticky HTML table suffers. Native scrolling is
+    // kept via an absolute sizer + a sticky canvas pinned over the viewport.
+    // The custom properties below are read by the canvas renderer so it matches
+    // the active theme.
+    .data-explorer-canvas-wrap {
+      flex: 1 1 auto;
+      position: relative;
+      overflow: auto;
+      min-height: 0;
+      outline: none;
+      user-select: none;
+      cursor: default;
+
+      --de-grid-text: @text-color;
+      --de-grid-muted: @text-color-subtle;
+      --de-grid-border: fade(@base-border-color, 35%);
+      --de-grid-header-bg: @background-color-highlight;
+      --de-grid-selection: fade(@text-color-info, 25%);
+      --de-grid-flash: fade(@text-color-info, 35%);
+    }
+
+    .data-explorer-canvas-sizer {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .data-explorer-canvas {
+      position: sticky;
+      top: 0;
+      left: 0;
+      display: block;
+    }
+
+    .data-explorer-table-wrapper {
+      flex: 1 1 auto;
+      overflow: auto;
+      cursor: default;
+
+      .data-explorer-table {
+        width: 100%;
+        // Separate borders with no spacing so each cell owns a single border.
+        border-collapse: separate;
+        border-spacing: 0;
+
+        @de-border: fade(@base-border-color, 35%);
+
+        th,
+        td {
+          padding: 0.3em 0.5em;
+          border-right: 1px solid @de-border;
+          border-bottom: 1px solid @de-border;
+          white-space: nowrap;
+        }
+
+        // Outer top / left edges (other edges come from each cell's own borders).
+        th:first-child,
+        td:first-child {
+          border-left: 1px solid @de-border;
+        }
+
+        // Sticky header. A border on a sticky cell stops repainting when
+        // scrolled, so separators are drawn with box-shadows, which stick
+        // reliably; the top/left edges stay as normal borders.
+        > thead th {
+          position: sticky;
+          top: 0;
+          z-index: 3;
+          background-color: @background-color-highlight;
+          border-top: 1px solid @de-border;
+          border-bottom: 0;
+          box-shadow: inset 0 -1px 0 @de-border;
+        }
+
+        // Sticky first (index) column. Right separator via box-shadow.
+        .data-explorer-index-cell {
+          position: sticky;
+          left: 0;
+          z-index: 2;
+          color: @text-color-subtle;
+          background-color: @background-color-highlight;
+          border-right: 0;
+          box-shadow: inset -1px 0 0 @de-border;
+        }
+
+        // Top-left corner: sticky in both axes, above everything, with both the
+        // bottom and right separators.
+        .data-explorer-index-head {
+          left: 0;
+          z-index: 4;
+          color: @text-color-subtle;
+          background-color: @background-color-highlight;
+          border-right: 0;
+          box-shadow: inset -1px -1px 0 @de-border;
+        }
+
+        // Row highlighted from a plot-point click (override the sticky cell bg).
+        tr.data-explorer-row-selected td,
+        tr.data-explorer-row-selected .data-explorer-index-cell {
+          background-color: fade(@text-color-info, 25%);
+        }
+      }
+    }
+
+    .data-explorer-scalar {
+      flex: 1 1 auto;
+      overflow: auto;
+      padding: 0.5em;
+    }
+
+    .data-explorer-pager {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 0;
+
+      .data-explorer-page-label {
+        white-space: nowrap;
+      }
+    }
+
+    .data-explorer-plot {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 0;
+
+      .data-explorer-plot-area {
+        flex: 1 1 auto;
+        overflow: hidden;
+        min-height: 0;
+
+        .data-explorer-plotly {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .variable-name-link {
+    cursor: pointer;
+    color: @text-color-info;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 

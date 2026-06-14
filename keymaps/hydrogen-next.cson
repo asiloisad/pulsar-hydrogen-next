@@ -10,3 +10,33 @@
 '.hydrogen-next.kernel-picker atom-text-editor[mini]':
   'ctrl-enter': 'select-list:kernel'
   'f5': 'hydrogen-next:update-kernels'
+
+'atom-workspace atom-text-editor.data-explorer-expression:not([mini])':
+  'enter': 'core:confirm'
+  'shift-enter': 'editor:newline'
+
+'atom-workspace .data-explorer-canvas-wrap':
+  'up': 'core:move-up'
+  'down': 'core:move-down'
+  'left': 'core:move-left'
+  'right': 'core:move-right'
+  'shift-up': 'core:select-up'
+  'shift-down': 'core:select-down'
+  'shift-left': 'core:select-left'
+  'shift-right': 'core:select-right'
+  'pageup': 'hydrogen-next:data-grid-page-up'
+  'pagedown': 'hydrogen-next:data-grid-page-down'
+  'shift-pageup': 'hydrogen-next:data-grid-select-page-up'
+  'shift-pagedown': 'hydrogen-next:data-grid-select-page-down'
+  'home': 'hydrogen-next:data-grid-move-to-row-start'
+  'end': 'hydrogen-next:data-grid-move-to-row-end'
+  'shift-home': 'hydrogen-next:data-grid-select-to-row-start'
+  'shift-end': 'hydrogen-next:data-grid-select-to-row-end'
+  'cmdorctrl-home': 'core:move-to-top'
+  'cmdorctrl-end': 'core:move-to-bottom'
+  'cmdorctrl-shift-home': 'core:select-to-top'
+  'cmdorctrl-shift-end': 'core:select-to-bottom'
+
+'atom-workspace atom-text-editor.watch-input:not([mini])':
+  'enter': 'core:confirm'
+  'shift-enter': 'editor:newline'

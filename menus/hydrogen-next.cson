@@ -143,6 +143,10 @@
           label: 'Toggle Variable Explorer'
           command: 'hydrogen-next:toggle-variable-explorer'
         }
+        {
+          label: 'Data Explorer'
+          command: 'hydrogen-next:data-explorer'
+        }
         {type: 'separator'}
         {
           label: 'Import Notebook'

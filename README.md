@@ -61,6 +61,7 @@ Commands available in `atom-text-editor:not([mini])`:
 - `hydrogen-next:remove-watch`: remove focused watch expression when focus is in a watch editor,
 - `hydrogen-next:toggle-watches`: toggle watches panel,
 - `hydrogen-next:toggle-variable-explorer`: toggle variable explorer panel,
+- `hydrogen-next:data-explorer`: load the selected expression (or word under cursor) into the data explorer,
 - `hydrogen-next:go-to-next-cell`: jump to next cell,
 - `hydrogen-next:go-to-previous-cell`: jump to previous cell,
 - `hydrogen-next:select-cell`: select current cell,

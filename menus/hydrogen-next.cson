@@ -140,7 +140,7 @@
           command: 'hydrogen-next:toggle-watches'
         }
         {
-          label: 'Toggle Variable Explorer'
+          label: 'Toggle Variables'
           command: 'hydrogen-next:toggle-variable-explorer'
         }
         {

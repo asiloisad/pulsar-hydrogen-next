@@ -13,7 +13,7 @@ Run code interactively with Jupyter kernels. Supports Python, R, JavaScript, and
 - **Code introspection**: Inline inspection of objects from the kernel.
 - **Shared namespace**: One kernel per language across files.
 - **Smart code detection**: Intelligently detects Python blocks, brackets, and folds.
-- **Variable explorer**: Browse Python variables in a dedicated panel.
+- **Variables**: Browse Python variables in a dedicated panel.
 - **Exec panel**: Command history with re-execution support.
 - **Multi-cursor support**: Run with multiple cursors and selections.
 - **Custom connections**: Connect to remote kernels (e.g., Docker).
@@ -60,7 +60,7 @@ Commands available in `atom-text-editor:not([mini])`:
 - `hydrogen-next:add-watch`: add watch expression,
 - `hydrogen-next:remove-watch`: remove focused watch expression when focus is in a watch editor,
 - `hydrogen-next:toggle-watches`: toggle watches panel,
-- `hydrogen-next:toggle-variable-explorer`: toggle variable explorer panel,
+- `hydrogen-next:toggle-variable-explorer`: toggle variables panel,
 - `hydrogen-next:data-explorer`: load the selected expression (or word under cursor) into the data explorer,
 - `hydrogen-next:go-to-next-cell`: jump to next cell,
 - `hydrogen-next:go-to-previous-cell`: jump to previous cell,

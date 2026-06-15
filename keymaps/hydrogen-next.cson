@@ -1,3 +1,12 @@
+'atom-workspace':
+  'alt-h i': 'hydrogen-next:toggle-inspector-focus'
+  'alt-h d': 'hydrogen-next:open-data-explorer'
+  'alt-h k': 'hydrogen-next:toggle-kernel-monitor-focus'
+  'alt-h v': 'hydrogen-next:toggle-variable-explorer'
+  'alt-h o': 'hydrogen-next:toggle-output-area'
+  'alt-h w': 'hydrogen-next:toggle-watches'
+  'alt-h e': 'hydrogen-next:toggle-exec-panel'
+
 'atom-workspace atom-text-editor:not([mini])':
   'cmdorctrl-enter': 'hydrogen-next:run'
   'shift-enter': 'hydrogen-next:run-and-move-down'

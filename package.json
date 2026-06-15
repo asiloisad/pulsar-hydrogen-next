@@ -70,7 +70,7 @@
     ],
     "atom-workspace": [
       "hydrogen-next:import-notebook",
-      "hydrogen-next:data-explorer",
+      "hydrogen-next:open-data-explorer",
       "hydrogen-next:debug-toggle",
       "hydrogen-next:toggle-kernel-monitor",
       "hydrogen-next:toggle-exec-panel",

@@ -14,6 +14,16 @@
 'atom-workspace atom-text-editor.data-explorer-expression:not([mini])':
   'enter': 'core:confirm'
   'shift-enter': 'editor:newline'
+  'escape': 'core:cancel'
+  'tab': 'hydrogen-next:data-explorer-focus-toolbar'
+  'shift-tab': 'hydrogen-next:data-explorer-focus-body'
+
+'atom-workspace .data-explorer-toolbar-row':
+  'left': 'hydrogen-next:data-explorer-toolbar-left'
+  'right': 'hydrogen-next:data-explorer-toolbar-right'
+  'enter': 'hydrogen-next:data-explorer-toolbar-confirm'
+  'tab': 'hydrogen-next:data-explorer-focus-body'
+  'shift-tab': 'hydrogen-next:data-explorer-focus-expression'
 
 'atom-workspace atom-text-editor.inspector-expression:not([mini])':
   'enter': 'core:confirm'
@@ -21,6 +31,10 @@
   'escape': 'core:cancel'
   'tab': 'hydrogen-next:inspector-focus-body'
   'shift-tab': 'hydrogen-next:inspector-focus-body'
+
+'atom-workspace .data-explorer-body':
+  'tab': 'hydrogen-next:data-explorer-focus-expression'
+  'shift-tab': 'hydrogen-next:data-explorer-focus-toolbar'
 
 'atom-workspace .data-explorer-canvas-wrap':
   'up': 'core:move-up'

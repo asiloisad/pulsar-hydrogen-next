@@ -145,7 +145,7 @@
         }
         {
           label: 'Data Explorer'
-          command: 'hydrogen-next:data-explorer'
+          command: 'hydrogen-next:open-data-explorer'
         }
         {type: 'separator'}
         {

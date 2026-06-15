@@ -528,7 +528,7 @@
           transition: border-color 0.15s ease;
 
           &.is-focused {
-            border-color: @text-color-info;
+            border-color: @accent-color;
           }
 
           .cursor-line {
@@ -797,12 +797,6 @@
         margin-top: 6px;
         overflow-x: auto;
 
-        // Reload button pinned to the right edge of the row.
-        .data-explorer-reload {
-          flex: 0 0 auto;
-          margin-left: auto;
-        }
-
         .data-explorer-object-meta {
           flex: 1 1 auto;
           display: flex;
@@ -904,6 +898,7 @@
       flex-direction: column;
       overflow: hidden;
       min-height: 0;
+      outline: none;
     }
 
     // Grid stays mounted so switching views doesn't rebuild it; hidden when
@@ -944,6 +939,9 @@
       outline: none;
       user-select: none;
       cursor: default;
+      // Read by the canvas renderer (getComputedStyle().fontFamily) so the grid
+      // matches the editor font.
+      font-family: var(--editor-font-family);
 
       --de-grid-text: @text-color;
       --de-grid-muted: @text-color-subtle;
@@ -970,6 +968,7 @@
       flex: 1 1 auto;
       overflow: auto;
       cursor: default;
+      outline: none;
 
       .data-explorer-table {
         width: 100%;
@@ -1040,6 +1039,7 @@
       flex: 1 1 auto;
       overflow: auto;
       padding: 0.5em;
+      outline: none;
     }
 
     .data-explorer-pager {
@@ -1060,6 +1060,7 @@
       flex-direction: column;
       overflow: hidden;
       min-height: 0;
+      outline: none;
 
       .data-explorer-plot-area {
         flex: 1 1 auto;

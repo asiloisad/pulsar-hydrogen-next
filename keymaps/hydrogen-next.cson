@@ -67,3 +67,11 @@
 'atom-workspace atom-text-editor.watch-input:not([mini])':
   'enter': 'core:confirm'
   'shift-enter': 'editor:newline'
+
+'atom-workspace .kernel-monitor-wrapper':
+  'up': 'hydrogen-next:kernel-monitor-up'
+  'down': 'hydrogen-next:kernel-monitor-down'
+  'enter': 'hydrogen-next:kernel-monitor-open'
+  'i': 'hydrogen-next:kernel-monitor-interrupt'
+  'r': 'hydrogen-next:kernel-monitor-restart'
+  's': 'hydrogen-next:kernel-monitor-shutdown'

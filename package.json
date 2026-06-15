@@ -72,7 +72,7 @@
       "hydrogen-next:import-notebook",
       "hydrogen-next:open-data-explorer",
       "hydrogen-next:debug-toggle",
-      "hydrogen-next:toggle-kernel-monitor",
+      "hydrogen-next:toggle-kernel-monitor-focus",
       "hydrogen-next:toggle-exec-panel",
       "hydrogen-next:toggle-variable-explorer",
       "hydrogen-next:hot-reload-package",

@@ -425,6 +425,11 @@
     overflow-y: auto;
     overflow-x: hidden;
     cursor: default;
+    outline: none;
+
+    .kernel-monitor-row.selected > td {
+      background-color: fade(@text-color-info, 25%);
+    }
 
     .kernel-monitor-table {
       width: 100%;

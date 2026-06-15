@@ -79,7 +79,7 @@ Commands available in `atom-workspace`:
 - `hydrogen-next:open-examples`: open example files,
 - `hydrogen-next:open-gateways`: open `gateways.cson`,
 - `hydrogen-next:shutdown-all-kernels`: shutdown all running kernels,
-- `hydrogen-next:toggle-kernel-monitor`: toggle kernel monitor panel,
+- `hydrogen-next:toggle-kernel-monitor-focus`: toggle focus to the kernel monitor panel (returns focus to the editor when already focused). The highlighted row follows the kernel of the active editor; navigate with <kbd>up</kbd> / <kbd>down</kbd>, open the selected kernel's files with <kbd>Enter</kbd>, and act on it with <kbd>i</kbd> (interrupt), <kbd>r</kbd> (restart), <kbd>s</kbd> (shutdown),
 - `hydrogen-next:toggle-exec-panel`: toggle exec panel,
 - `hydrogen-next:toggle-inspector-focus`: show inspector pane,
 - `hydrogen-next:inspect-under-cursor`: inspect the expression under the cursor without moving focus from the editor,

@@ -50,7 +50,7 @@
         }
         {
           label: 'Toggle Kernel Monitor'
-          command: 'hydrogen-next:toggle-kernel-monitor'
+          command: 'hydrogen-next:toggle-kernel-monitor-focus'
         }
         {
           label: 'Update Kernels'

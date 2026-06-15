@@ -592,7 +592,63 @@
 
   &.inspector {
     padding: @component-padding;
-    overflow-y: auto;
+    overflow: hidden;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+
+    .inspector-panel {
+      flex: 1 1 auto;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .inspector-controls {
+      flex: 0 0 auto;
+      display: flex;
+      gap: 4px;
+      align-items: flex-start;
+      padding-bottom: 6px;
+
+      .inspector-expression-editor {
+        flex: 1 1 auto;
+        min-width: 0;
+
+        .inspector-expression {
+          padding: (@component-padding / 2);
+          font-size: @font-size;
+          min-height: 2.5em;
+          max-height: 10em;
+          overflow-y: auto;
+          border: 1px solid @base-border-color;
+          border-radius: @component-border-radius;
+          background-color: @syntax-background-color;
+          transition: border-color 0.15s ease;
+
+          &.is-focused {
+            border-color: @accent-color;
+          }
+
+          .cursor-line {
+            background: transparent;
+          }
+        }
+      }
+    }
+
+    .inspector-body {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-y: auto;
+      outline: none;
+    }
+
+    .inspector-message {
+      padding: 1em 0.5em;
+      text-align: center;
+      color: @text-color-subtle;
+    }
 
     // span[style] {
     //   color: @text-color-info !important;

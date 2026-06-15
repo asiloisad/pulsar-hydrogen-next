@@ -125,11 +125,11 @@
         {type: 'separator'}
         {
           label: 'Show Inspector'
-          command: 'hydrogen-next:show-inspector'
+          command: 'hydrogen-next:toggle-inspector-focus'
         }
         {
-          label: 'Hide Inspector'
-          command: 'hydrogen-next:hide-inspector'
+          label: 'Inspect Under Cursor'
+          command: 'hydrogen-next:inspect-under-cursor'
         }
         {
           label: 'Toggle Output Area'

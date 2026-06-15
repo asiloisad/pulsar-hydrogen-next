@@ -79,8 +79,8 @@
       "hydrogen-next:open-examples",
       "hydrogen-next:open-gateways",
       "hydrogen-next:shutdown-all-kernels",
-      "hydrogen-next:show-inspector",
-      "hydrogen-next:hide-inspector"
+      "hydrogen-next:toggle-inspector-focus",
+      "hydrogen-next:inspect-under-cursor"
     ]
   },
   "consumedServices": {

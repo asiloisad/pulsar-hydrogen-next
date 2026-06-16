@@ -346,10 +346,11 @@ Three commands are available:
 
 Only local kernels are supported (remote kernels have no connection file).
 
-The command template is configurable via the `Jupyter console command` setting. Use `{connection-file}` as a placeholder for the active kernel's connection file path. Examples:
+The command template is configurable via the `Jupyter console command` setting. Two placeholders are available: `{python}` for the active kernel's Python interpreter and `{connection-file}` for the kernel's connection file path. Using `{python}` runs the console through the kernel's own interpreter, so the conda/venv environment does not need to be activated in the terminal first. Examples:
 
-- `jupyter console --existing {connection-file}` (default),
-- `jupyter qtconsole --existing {connection-file}`,
+- `"{python}" -m jupyter_console --existing {connection-file}` (default),
+- `"{python}" -m qtconsole --existing {connection-file}`,
+- `jupyter console --existing {connection-file}` (uses `jupyter` from the terminal's PATH),
 - `ssh remote 'jupyter console --existing {connection-file}'`.
 
 ## Provided Service `hydrogen.provider`

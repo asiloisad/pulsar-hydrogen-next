@@ -14,7 +14,7 @@ Run code interactively with Jupyter kernels. Supports Python, R, JavaScript, and
 - **Shared namespace**: One kernel per language across files.
 - **Smart code detection**: Intelligently detects Python blocks, brackets, and folds.
 - **Variables**: Browse Python variables in a dedicated panel.
-- **Data explorer**: Inspect DataFrames, arrays, lists, dicts, and objects in a grid, with charts and summaries. Drill into rows holding a nested structure with <kbd>Enter</kbd> or a double-click, and climb back out with <kbd>Backspace</kbd> or the breadcrumb.
+- **Data explorer**: Inspect DataFrames, arrays, lists, dicts, and objects in a grid, with charts and summaries. Drill into rows holding a nested structure with <kbd>Enter</kbd> or a double-click, and climb back out with <kbd>Backspace</kbd> or the breadcrumb. Searchable with [search-panel](https://github.com/asiloisad/pulsar-search-panel): matching cells are highlighted and Find Next/Previous navigates between them.
 - **Exec panel**: Command history with re-execution support.
 - **Multi-cursor support**: Run with multiple cursors and selections.
 - **Custom connections**: Connect to remote kernels (e.g., Docker).
@@ -89,6 +89,18 @@ Commands available in `atom-workspace`:
 - `hydrogen-next:open-jupyter-console`: open Jupyter console attached to active kernel in an embedded terminal pane,
 - `hydrogen-next:spawn-jupyter-console`: spawn Jupyter console attached to active kernel in a system terminal,
 - `hydrogen-next:copy-jupyter-console-command`: copy the Jupyter console command to clipboard.
+
+## Provided Service `search-adapter`
+
+Allows [search-panel](https://github.com/asiloisad/pulsar-search-panel) to search the active Data Explorer pane through the normal buffer find workflow:
+
+- `search-panel:show`, `search-panel:find-next`, and `search-panel:find-previous` search the visible Data Explorer grid instead of the active text editor while the Data Explorer pane is active.
+- Matching cells are highlighted in the canvas grid. The current match uses a stronger highlight and is scrolled into view.
+- Search respects the shared find options, including regex, case sensitivity, and whole-word matching.
+- Data Explorer is read-only, so replace commands are disabled for this pane.
+- Drill-down, breadcrumb navigation, refresh, errors, and reset refresh the search result list so stale cell matches are cleared.
+
+This service is provided as `search-adapter@1.0.0` through `provideSearchAdapter`.
 
 ## Editor kernel class
 
@@ -354,6 +366,44 @@ The command template is configurable via the `Jupyter console command` setting. 
 - `jupyter console --existing {connection-file}` (uses `jupyter` from the terminal's PATH),
 - `ssh remote 'jupyter console --existing {connection-file}'`.
 
+## Consumed Service `hydrogen-adapter`
+
+Allows non-TextEditor pane items, such as notebooks from [jupyter-next](https://github.com/asiloisad/pulsar-jupyter-next), to be executed through hydrogen-next commands. The adapter owns target enumeration, source retrieval, output persistence, and focus/navigation inside the external pane item.
+
+External packages provide this service in `package.json`:
+
+```json
+{
+  "providedServices": {
+    "hydrogen-adapter": {
+      "versions": {
+        "1.0.0": "provideHydrogenAdapter"
+      }
+    }
+  }
+}
+```
+
+In the provider package's main module:
+
+```javascript
+module.exports = {
+  provideHydrogenAdapter() {
+    return {
+      getActiveAdapter() {
+        return this.getAdapterForItem(atom.workspace.getActivePaneItem());
+      },
+
+      getAdapterForItem(item) {
+        return item && item.getHydrogenAdapter ? item.getHydrogenAdapter() : null;
+      },
+    };
+  },
+};
+```
+
+The active adapter may implement methods such as `getRunTargets(scope)`, `getRunTarget(id)`, `getActiveTargetId()`, `setActiveTargetId(id)`, `getKernelTarget(id)`, `getMetadata()`, `getKernelSpec()`, `setKernelSpec(spec)`, `setTargetExecutionCount(target, count)`, `appendTargetOutput(target, output)`, `clearTargetOutputs(target)`, `finishTargetExecution(target, result)`, and `focusTarget(target)`.
+
 ## Provided Service `hydrogen.provider`
 
 Allows other packages to interact with Jupyter kernels: execute code, get completions, inspect objects, and monitor kernel state.
@@ -468,6 +518,14 @@ async function runCode(hydrogen) {
   disposable.dispose();
 }
 ```
+
+## Provided Service `autocomplete.provider`
+
+Provides kernel-backed completions to Pulsar autocomplete consumers while a Hydrogen kernel is active for the editor. This service is provided as `autocomplete.provider@4.0.0` through `provideAutocompleteResults`.
+
+## Provided Service `hydrogen.breakpoints`
+
+Provides breakpoint state for integrations that need to inspect or render Hydrogen breakpoints. This service is provided as `hydrogen.breakpoints@0.0.1` through `provideBreakpoints`.
 
 ## Contributing
 

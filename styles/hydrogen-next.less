@@ -992,6 +992,10 @@
       --de-grid-selection: fade(@text-color-info, 25%);
       --de-grid-flash: fade(@text-color-info, 35%);
       --de-grid-header-selection: fade(@text-color-info, 10%);
+      // Match the text-editor find highlight colours (search-panel uses these
+      // same syntax variables for .find-result / .current-result).
+      --de-grid-search: fade(@syntax-result-marker-color, 30%);
+      --de-grid-search-current: fade(@syntax-result-marker-color-selected, 55%);
     }
 
     .data-explorer-canvas-sizer {

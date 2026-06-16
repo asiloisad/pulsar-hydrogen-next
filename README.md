@@ -14,6 +14,7 @@ Run code interactively with Jupyter kernels. Supports Python, R, JavaScript, and
 - **Shared namespace**: One kernel per language across files.
 - **Smart code detection**: Intelligently detects Python blocks, brackets, and folds.
 - **Variables**: Browse Python variables in a dedicated panel.
+- **Data explorer**: Inspect DataFrames, arrays, lists, dicts, and objects in a grid, with charts and summaries. Drill into rows holding a nested structure with <kbd>Enter</kbd> or a double-click, and climb back out with <kbd>Backspace</kbd> or the breadcrumb.
 - **Exec panel**: Command history with re-execution support.
 - **Multi-cursor support**: Run with multiple cursors and selections.
 - **Custom connections**: Connect to remote kernels (e.g., Docker).

@@ -793,14 +793,14 @@
         }
       }
 
-      // Plot-type toolbar and axis controls share a single horizontal line.
+      // View toolbar, breadcrumb and axis controls share a row, wrapping onto
+      // further lines when there isn't enough width.
       .data-explorer-toolbar-row {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         align-items: center;
-        gap: 10px;
+        gap: 6px 10px;
         margin-top: 6px;
-        overflow-x: auto;
 
         .data-explorer-object-meta {
           flex: 1 1 auto;
@@ -828,12 +828,49 @@
         flex: 0 0 auto;
       }
 
-      // Plot axis controls, kept to a single row.
+      // Drill-down trail shown when navigating into nested structures. Lives
+      // inline in the toolbar row.
+      .data-explorer-breadcrumb {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2px;
+        font-size: 0.9em;
+
+        .data-explorer-breadcrumb-sep {
+          color: @text-color-subtle;
+        }
+
+        .data-explorer-breadcrumb-item {
+          border: none;
+          background: transparent;
+          padding: 1px 4px;
+          border-radius: @component-border-radius;
+          color: @accent-color;
+          cursor: pointer;
+          font-family: inherit;
+          max-width: 22em;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          &:hover:not(:disabled) {
+            background-color: @background-color-highlight;
+          }
+
+          &:disabled {
+            color: @text-color;
+            cursor: default;
+          }
+        }
+      }
+
+      // Plot axis controls; wrap along with the rest of the toolbar.
       .data-explorer-plot-controls {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         align-items: center;
-        gap: 10px;
+        gap: 6px 10px;
 
         // Each control is fully inline: label, −/+ buttons, then the dropdown.
         .data-explorer-control {
@@ -954,6 +991,7 @@
       --de-grid-header-bg: @background-color-highlight;
       --de-grid-selection: fade(@text-color-info, 25%);
       --de-grid-flash: fade(@text-color-info, 35%);
+      --de-grid-header-selection: fade(@text-color-info, 10%);
     }
 
     .data-explorer-canvas-sizer {

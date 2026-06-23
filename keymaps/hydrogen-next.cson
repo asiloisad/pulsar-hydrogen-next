@@ -7,16 +7,16 @@
   'alt-h w': 'hydrogen-next:toggle-watches'
   'alt-h e': 'hydrogen-next:toggle-exec-panel'
 
-'atom-workspace atom-text-editor:not([mini])':
+'atom-workspace atom-text-editor:not([mini]):not(atom-dock atom-text-editor)':
   'cmdorctrl-enter': 'hydrogen-next:run'
   'shift-enter': 'hydrogen-next:run-and-move-down'
-  'cmdorctrl-alt-enter': 'hydrogen-next:run-cell'
+  'alt-enter': 'hydrogen-next:run-cell'
   'shift-alt-enter': 'hydrogen-next:run-cell-and-move-down'
   'cmdorctrl-shift-enter': 'hydrogen-next:run-all'
   'ctrl-shift-backspace': 'hydrogen-next:clear-results'
   'cmdorctrl-alt-backspace': 'hydrogen-next:clear-results'
 
-'.hydrogen-next.kernel-picker atom-text-editor[mini]':
+'atom-workspace .hydrogen-next.kernel-picker atom-text-editor[mini]':
   'ctrl-enter': 'select-list:kernel'
   'f5': 'hydrogen-next:update-kernels'
 

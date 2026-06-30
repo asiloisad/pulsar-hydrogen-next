@@ -402,7 +402,18 @@ module.exports = {
 };
 ```
 
-The active adapter may implement methods such as `getRunTargets(scope)`, `getRunTarget(id)`, `getActiveTargetId()`, `setActiveTargetId(id)`, `getKernelTarget(id)`, `getMetadata()`, `getKernelSpec()`, `setKernelSpec(spec)`, `setTargetExecutionCount(target, count)`, `appendTargetOutput(target, output)`, `clearTargetOutputs(target)`, `finishTargetExecution(target, result)`, and `focusTarget(target)`.
+The service object must expose `getActiveAdapter()` or `handlesItem(item)` plus `getAdapterForItem(item)`. The active adapter should expose:
+
+- Required identity/context methods: `getPaneItem()`, `getPath()`, `getTitle()`. Unsaved or virtual adapters may also expose `getAdapterId()` for a stable non-path key.
+- Required target methods: `getRunTargets(scope)`, `getRunTarget(id)`, `getActiveTargetId()`.
+- Each target should include `{ id, editor, grammar, source, row, type, executable }`. `executable: false`, `type: "markdown"`, and `type: "raw"` targets are skipped without starting kernel execution.
+- Optional kernel methods: `getKernelTarget(id)`, `getMetadata()`, `setKernelSpec(spec)`.
+- Optional navigation methods: `setActiveTargetId(id)`, `getNextRunTarget(target)`, `focusTarget(target)`.
+- Optional output methods: `clearTargetOutputs(target)`, `appendTargetOutput(target, output)`, `setTargetExecutionCount(target, count)`.
+- Optional lifecycle methods: `beginTargetExecution(target, result)`, `finishTargetExecution(target, result)`, `cancelTargetExecution(target, result)`, `failTargetExecution(target, result)`, and `skipTargetExecution(target, result)`.
+- Optional path method: `onDidChangePath(callback)`, used to keep kernel mappings stable when an unsaved adapter item is saved or renamed.
+
+`finishTargetExecution` receives `{ kernel, success, status, lastExecutionTime }`, where `status` is one of `"ok"`, `"error"`, `"failed"`, `"cancelled"`, or `"skipped"`.
 
 ## Provided Service `hydrogen.provider`
 
